@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 15:37:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 12:40:52 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/24 10:57:17 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/24 12:44:07 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero_calloc(void *s, size_t n)
 {
 	unsigned long	i;
 	unsigned char	*casts;
@@ -24,4 +24,14 @@ void	ft_bzero(void *s, size_t n)
 		casts[i] = 0;
 		i++;
 	}
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	char	*ptr;
+
+	if (!count || !size || !(ptr = malloc(count * size)))
+		return (NULL);
+	ft_bzero_calloc(ptr, count * size);
+	return (ptr);
 }

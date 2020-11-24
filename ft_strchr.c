@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 15:37:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 12:40:52 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/24 07:55:31 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/24 08:07:55 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned long	i;
-	unsigned char	*casts;
-
-	casts = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	while (*s)
 	{
-		casts[i] = 0;
-		i++;
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
 	}
+	if ((char)c == 0)
+		return ((char *)s);
+	return (NULL);
 }

@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 15:37:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 12:40:52 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/24 08:33:08 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/24 08:50:42 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned long	i;
-	unsigned char	*casts;
+	char			*d;
+	char			*s;
+	unsigned long	dlen;
+	int				n;
 
-	casts = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	d = dst;
+	s = (char *)src;
+	n = dstsize;
+	while (n-- != 0 && *d != '\0')
+		d++;
+	dlen = d - dst;
+	n = dstsize - dlen;
+	if (n == 0)
+		return (dlen + ft_strlen(s));
+	while (*s != '\0')
 	{
-		casts[i] = 0;
-		i++;
+		if (n != 1)
+		{
+			*d++ = *s;
+			n--;
+		}
+		s++;
 	}
+	*d = '\0';
+	return (dlen + (s - src));
 }

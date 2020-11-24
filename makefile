@@ -1,8 +1,7 @@
 NAME = libft.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -O3
-lIBC = ar rc
-LIBI = ranlib
+lIBC = ar rcs
 INC = ./libft.h
 OBJS = $(SRCS:.c=.o)
 SRCS = \
@@ -12,12 +11,25 @@ SRCS = \
 	ft_isascii.c  \
 	ft_isdigit.c \
 	ft_isprint.c  \
+	ft_isspace.c \
 	ft_memccpy.c  \
 	ft_memcpy.c  \
+	ft_memmove.c \
+	ft_memcmp.c \
+	ft_memchr.c \
 	ft_memset.c  \
 	ft_strlen.c  \
 	ft_toupper.c  \
-	ft_tolower.c  
+	ft_tolower.c  \
+	ft_strchr.c \
+	ft_strncmp.c \
+	ft_strrchr.c \
+	ft_strlcpy.c \
+	ft_strlcat.c \
+	ft_strnstr.c \
+	ft_atoi.c \
+	ft_strdup.c \
+	ft_calloc.c
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INC)
@@ -26,7 +38,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(lIBC) $(NAME) $(OBJS)
-	$(LIBI) $(NAME)
 
 re: fclean all
 

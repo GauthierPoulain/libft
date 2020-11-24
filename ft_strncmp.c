@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 15:37:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 12:40:52 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/24 08:53:31 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/24 08:59:27 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned long	i;
-	unsigned char	*casts;
+	unsigned char casts1;
+	unsigned char casts2;
 
-	casts = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	while (n-- > 0)
 	{
-		casts[i] = 0;
-		i++;
+		casts1 = (unsigned char)*s1++;
+		casts2 = (unsigned char)*s2++;
+		if (casts1 != casts2)
+			return (casts1 - casts2);
+		if (casts1 == '\0')
+			return (0);
 	}
+	return (0);
 }

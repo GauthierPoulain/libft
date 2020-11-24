@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 15:37:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 12:40:52 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/24 07:40:35 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/24 07:53:42 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned long	i;
-	unsigned char	*casts;
+	unsigned char *casts1;
+	unsigned char *casts2;
 
-	casts = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	casts1 = (unsigned char *)s1;
+	casts2 = (unsigned char *)s2;
+	while (n--)
 	{
-		casts[i] = 0;
-		i++;
+		if (*casts1 != *casts2)
+			return (*casts1 - *casts2);
+		casts1++;
+		casts2++;
 	}
+	return (0);
 }
