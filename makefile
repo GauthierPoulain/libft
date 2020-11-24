@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -O3
+CFLAGS = -Wall -Wextra -Werror
 lIBC = ar rcs
 INC = ./libft.h
 OBJS = $(SRCS:.c=.o)
@@ -29,7 +29,8 @@ SRCS = \
 	ft_strnstr.c \
 	ft_atoi.c \
 	ft_strdup.c \
-	ft_calloc.c
+	ft_calloc.c \
+	ft_substr.c
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INC)

@@ -6,13 +6,13 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 09:15:37 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 10:42:33 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:02:46 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi_calcsign(int pos, int neg)
+static int	ft_atoi_calcsign(int pos, int neg)
 {
 	if ((!pos && !neg) || (pos == 1 && !neg))
 		return (1);
@@ -22,7 +22,7 @@ int		ft_atoi_calcsign(int pos, int neg)
 		return (0);
 }
 
-int		ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	char	*tstr;
 	int		pos;

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:37:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 12:40:52 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 13:52:42 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned long	i;
 	unsigned char	*casts;
 
 	casts = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		casts[i] = 0;
-		i++;
-	}
+	while (n--)
+		*casts++ = 0;
 }

@@ -6,13 +6,13 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 10:57:17 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 12:44:07 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:02:57 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero_calloc(void *s, size_t n)
+static void	ft_bzero_calloc(void *s, size_t n)
 {
 	unsigned long	i;
 	unsigned char	*casts;
@@ -26,7 +26,7 @@ void	ft_bzero_calloc(void *s, size_t n)
 	}
 }
 
-void	*ft_calloc(size_t count, size_t size)
+void		*ft_calloc(size_t count, size_t size)
 {
 	char	*ptr;
 
