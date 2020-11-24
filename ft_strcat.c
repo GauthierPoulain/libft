@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 10:57:17 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 15:34:17 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/24 15:06:35 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/24 15:07:05 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_bzero_calloc(void *s, size_t n)
+char	*ft_strcat(char *dest, char *src)
 {
-	unsigned long	i;
-	unsigned char	*casts;
+	unsigned int	i;
+	unsigned int	j;
 
-	casts = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	i = ft_strlen(dest);
+	j = 0;
+	while (src[j])
 	{
-		casts[i] = 0;
-		i++;
+		dest[i + j] = src[j];
+		j++;
 	}
-}
-
-void		*ft_calloc(size_t count, size_t size)
-{
-	char	*ptr;
-
-	if (!count || !size || !(ptr = malloc(sizeof(char) * (count * size))))
-		return (NULL);
-	ft_bzero_calloc(ptr, count * size);
-	return (ptr);
+	dest[i + j] = '\0';
+	return (dest);
 }

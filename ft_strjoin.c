@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 10:57:17 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 15:34:17 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/24 15:05:06 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/24 15:18:59 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_bzero_calloc(void *s, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned long	i;
-	unsigned char	*casts;
+	unsigned long	len;
+	char			*res;
 
-	casts = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		casts[i] = 0;
-		i++;
-	}
-}
-
-void		*ft_calloc(size_t count, size_t size)
-{
-	char	*ptr;
-
-	if (!count || !size || !(ptr = malloc(sizeof(char) * (count * size))))
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if (!(res = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	ft_bzero_calloc(ptr, count * size);
-	return (ptr);
+	ft_bzero(res, len + 1);
+	ft_memcpy(res, s1, ft_strlen(s1));
+	ft_strcat(res, (char *)s2);
+	return (res);
 }

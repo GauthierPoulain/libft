@@ -30,7 +30,8 @@ SRCS = \
 	ft_atoi.c \
 	ft_strdup.c \
 	ft_calloc.c \
-	ft_substr.c
+	ft_substr.c \
+	ft_strcat.c
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INC)
