@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 16:56:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 15:57:36 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/24 16:25:57 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/24 16:29:35 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_putchar_fd(char c, int fd)
 {
-	int			i;
-	char		*bdst;
-	const char	*bsrc;
-
-	i = 0;
-	bsrc = src;
-	bdst = dst;
-	if (src > dst)
-	{
-		while ((unsigned long)i < len)
-		{
-			bdst[i] = bsrc[i];
-			i++;
-		}
-	}
-	else
-		while (len--)
-			bdst[len] = bsrc[len];
-	return (dst);
+	write(fd, &c, 1);
 }
