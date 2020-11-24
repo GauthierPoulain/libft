@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:36:12 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 07:04:47 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 07:09:56 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	casts = (unsigned char *)src;
 	while (n--)
 	{
-		if (*casts == (unsigned char)c)
+		*castd = *casts;
+		if (*castd == (unsigned char)c)
 			return (castd + 1);
-		*castd++ = *casts++;
+		castd++;
+		casts++;
 	}
-		return (NULL);
+	return (NULL);
 }
