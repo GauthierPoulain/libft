@@ -11,9 +11,9 @@ int main(int argc, char const *argv[])
 	// printf("%d\n", atoi(strr));
 	// printf("%d\n", ft_atoi(strr));
 
-	str = ft_itoa(123456789115555555);
+	str = ft_itoa(ft_atoi(argv[1]));
 	printf("%s\n", str);
-	while (*str)
-		printf("%c\n", *str++);
+	// while (*str)
+	// 	printf("%c\n", *str++);
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 09:09:24 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 11:10:27 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 12:50:56 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,29 @@ static int	ft_itoa_getsize(int n)
 	return (count);
 }
 
-char *ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	char *res;
-	int		i;
-	unsigned long tmp;
+	char		*res;
+	int			count;
+	int			i;
+	long int	tmp;
 
-	if (!(res = malloc(sizeof(char) * (ft_itoa_getnumberlen(n) + 1))))
+	tmp = n;
+	count = ft_itoa_getsize(n);
+	if (tmp < 0 || count == 0)
+		count++;
+	if (!(res = ft_strnew(count)))
 		return (NULL);
 	i = 0;
-	if (n < 0)
+	if (tmp < 0)
 	{
+		tmp *= -1;
 		res[i++] = '-';
-		tmp = -(unsigned long)n;
 	}
-	else
-		tmp = (unsigned long)n;
-	ft_itoa_addchar(res, tmp);
-	res[ft_itoa_getnumberlen(n)] = 0;
+	while (count > i)
+	{
+		res[--count] = (tmp % 10) + '0';
+		tmp /= 10;
+	}
 	return (res);
 }
