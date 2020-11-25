@@ -1,33 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 12:45:30 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 10:44:09 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/25 09:09:24 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/25 11:10:27 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static int	ft_itoa_getsize(int n)
 {
-	char			*ptr;
-	unsigned long	i;
-	unsigned long	tmp;
+	int		count;
 
-	if (!s || !(ptr = malloc(sizeof(char) * (len + 1))))
+	count = 0;
+	if (n < 0)
+		n *= -1;
+	while (n)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
+}
+
+char *ft_itoa(int n)
+{
+	char *res;
+	int		i;
+	unsigned long tmp;
+
+	if (!(res = malloc(sizeof(char) * (ft_itoa_getnumberlen(n) + 1))))
 		return (NULL);
 	i = 0;
-	tmp = 0;
-	while (s[i] && tmp < len)
+	if (n < 0)
 	{
-		if (i >= start)
-			ptr[tmp++] = s[i];
-		i++;
+		res[i++] = '-';
+		tmp = -(unsigned long)n;
 	}
-	ptr[tmp] = 0;
-	return (ptr);
+	else
+		tmp = (unsigned long)n;
+	ft_itoa_addchar(res, tmp);
+	res[ft_itoa_getnumberlen(n)] = 0;
+	return (res);
 }
