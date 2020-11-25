@@ -43,26 +43,27 @@ static void		ft_lstmap_lstclear(t_list **lst, void (*del)(void *))
 
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
-	t_list	*list;
-	t_list	*start;
+	t_list		*new;
+	t_list		*iter;
+	t_list		*start;
 
-	if (!lst)
+	if (lst == NULL)
 		return (NULL);
-	new = f(lst);
-	start = ft_lstmap_lstnew(new->content);
-	list = start;
-	lst = lst->next;
-	while (lst)
+	iter = lst;
+	new = ft_lstmap_lstnew(void(f(iter->content));
+	if (new == NULL)
+		return (NULL);
+	start = new;
+	while (iter->next != NULL)
 	{
-		new = f(lst);
-		if (!(list->next = ft_lstmap_lstnew(new->content)))
-			{
-				ft_lstmap_lstclear(&start, del);
-				return (NULL);
-			}
-		list = list->next;
-		lst = lst->next;
+		new->next = ft_lstmap_lstnew(void(f(iter->content));
+		if (new->next == NULL)
+		{
+			ft_lstmap_lstclear(&start, del);
+			return (NULL);
+		}
+		new = new->next;
+		iter = iter->next;
 	}
 	return (start);
 }
