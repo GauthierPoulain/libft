@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 16:39:14 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 16:53:01 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-//------------- DEV
-
-# include <stdio.h>
-
-//-------------
-
 typedef struct	s_list
 {
-	void 			*content;
+	void			*content;
 	struct s_list	*next;
 }				t_list;
 
@@ -45,6 +39,8 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 t_list			*ft_lstlast(t_list *lst);
 void			ft_lstiter(t_list *lst, void (*f)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+void (*del)(void *));
 int				ft_lstsize(t_list *lst);
 t_list			*ft_lstnew(void *content);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
