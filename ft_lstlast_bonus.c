@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 15:05:06 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 16:40:55 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/25 14:46:06 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/25 15:46:25 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned long	len;
-	char			*res;
+	t_list	*current;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(res = ft_calloc(1, len + 1)))
+	if (!lst)
 		return (NULL);
-	ft_memcpy(res, s1, ft_strlen(s1));
-	ft_strcat(res, (char *)s2);
-	return (res);
+	current = lst;
+	while (current->next)
+		current = current->next;
+	return (current);
 }

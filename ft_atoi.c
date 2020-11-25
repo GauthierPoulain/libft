@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 09:15:37 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 15:02:46 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 12:58:55 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_atoi_calcsign(int pos, int neg)
 {
-	if ((!pos && !neg) || (pos == 1 && !neg))
+		if ((!pos && !neg) || (pos == 1 && !neg))
 		return (1);
 	else if (!pos && neg == 1)
 		return (-1);

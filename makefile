@@ -1,7 +1,6 @@
 NAME = libft.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
-lIBC = ar rcs
 INC = ./libft.h
 OBJS = $(SRCS:.c=.o)
 SRCS = \
@@ -35,7 +34,6 @@ SRCS = \
 	ft_strlen.c  \
 	ft_strmapi.c \
 	ft_strncmp.c \
-	ft_strnew.c \
 	ft_strnstr.c \
 	ft_strrchr.c \
 	ft_strtrim.c \
@@ -43,21 +41,35 @@ SRCS = \
 	ft_tolower.c  \
 	ft_toupper.c  \
 
-.c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INC)
+OBJS_BONUS = $(SRC_BONUS:.c=.o)
+SRC_BONUS = \
+	ft_lstnew_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c \
+	ft_lstadd_back_bonus.c \
+	ft_lstdelone_bonus.c \
+	ft_lstclear_bonus.c \
+
+.c.o: libft.h
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(lIBC) $(NAME) $(OBJS)
+	$(AR) rcs $(NAME) $(OBJS)
+
+bonus: $(NAME) $(OBJS_BONUS)
+	$(AR) rcs $(NAME) $(OBJS_BONUS)
 
 re: fclean all
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJS)
+	$(RM) $(OBJS_BONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 norm:
 	norminette *.[ch]
@@ -65,4 +77,4 @@ norm:
 build: fclean all
 	make clean
 
-.PHONY: .c.o all re clean fclean norm
+.PHONY: .c.o all bonus re clean fclean norm

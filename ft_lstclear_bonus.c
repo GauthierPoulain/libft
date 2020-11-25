@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 15:05:06 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 16:40:55 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/25 16:06:09 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/25 16:28:24 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	unsigned long	len;
-	char			*res;
+	t_list	*tmp;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(res = ft_calloc(1, len + 1)))
-		return (NULL);
-	ft_memcpy(res, s1, ft_strlen(s1));
-	ft_strcat(res, (char *)s2);
-	return (res);
+	if (*lst)
+	{
+		while (*lst)
+		{
+			tmp = (*lst)->next;
+			del((*lst)->content);
+			free(*lst);
+			*lst = tmp;
+		}
+		*lst = NULL;
+	}
 }
