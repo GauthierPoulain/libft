@@ -74,7 +74,7 @@ fclean: clean
 	$(RM) $(NAME)
 
 norm:
-	norminette *.[ch] | grep -E '(Error|Warning)'
+	norminette *.[ch]
 
 build: fclean all
 	make clean
