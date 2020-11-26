@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = clang
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
 INC = ./libft.h
 OBJS = $(SRCS:.c=.o)
 SRCS = \
@@ -74,7 +74,7 @@ fclean: clean
 	$(RM) $(NAME)
 
 norm:
-	norminette *.[ch]
+	norminette *.[ch] | grep -E '(Error|Warning)'
 
 build: fclean all
 	make clean

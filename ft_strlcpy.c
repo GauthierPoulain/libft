@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 08:23:16 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 08:33:25 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 13:31:32 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	unsigned int		i;
 	unsigned int		tmp;
 
+	if (!dst && !src)
+		return (0);
 	tmp = dstsize;
 	i = 0;
 	if (tmp > 0)
@@ -26,7 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 			dst[i] = src[i];
 			i++;
 		}
-		dst[i] = '\0';
+		dst[i] = 0;
 	}
 	return (ft_strlen(src));
 }

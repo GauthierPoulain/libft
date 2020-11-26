@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:06:09 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 16:28:24 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 10:19:34 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 			free(*lst);
 			*lst = tmp;
 		}
-		*lst = NULL;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:56:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 15:57:36 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 13:30:07 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char		*bdst;
 	const char	*bsrc;
 
+	if (!dst && !src)
+		return (NULL);
 	i = 0;
 	bsrc = src;
 	bdst = dst;
