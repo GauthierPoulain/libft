@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:49:30 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 17:37:26 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 09:41:53 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,24 @@ static void		ft_lstmap_lstclear(t_list **lst, void (*del)(void *))
 	}
 }
 
-
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list		*new;
 	t_list		*iter;
 	t_list		*start;
 
-	if (lst == NULL)
+	if (!lst)
 		return (NULL);
 	iter = lst;
-	new = ft_lstmap_lstnew(void(f(iter->content));
-	if (new == NULL)
+	new = ft_lstmap_lstnew(f(iter->content));
+	if (!new)
 		return (NULL);
 	start = new;
-	while (iter->next != NULL)
+	iter = iter->next;
+	while (iter)
 	{
-		new->next = ft_lstmap_lstnew(void(f(iter->content));
-		if (new->next == NULL)
+		new->next = ft_lstmap_lstnew(f(iter->content));
+		if (!new->next)
 		{
 			ft_lstmap_lstclear(&start, del);
 			return (NULL);
