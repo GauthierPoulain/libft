@@ -1,7 +1,7 @@
 NAME = libft.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
-INC = ./libft.h
+HEADERS = libft.h
 OBJS = $(SRCS:.c=.o)
 SRCS = \
 	ft_atoi.c \
@@ -53,7 +53,7 @@ SRC_BONUS = \
 	ft_lstiter_bonus.c \
 	ft_lstmap_bonus.c \
 
-.c.o: libft.h
+%.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all: $(NAME)
@@ -79,4 +79,4 @@ norm:
 build: fclean all
 	make clean
 
-.PHONY: .c.o all bonus re clean fclean norm
+.PHONY: all bonus re clean fclean norm

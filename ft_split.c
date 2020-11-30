@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 15:25:28 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/26 13:35:21 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/30 13:27:56 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ char			**ft_split(char const *s, char c)
 	int		k;
 	char	**tab;
 
-	if (!s || !c || !(tab = (char **)malloc(sizeof(char *) *
-	(count_words(s, c) + 1))))
+	if (!s || !(tab = ft_calloc(count_words(s, c) + 1,
+	sizeof(char *))))
 		return (NULL);
 	i = 0;
 	k = 0;
@@ -76,12 +76,11 @@ char			**ft_split(char const *s, char c)
 		j = 0;
 		while (s[i] == c)
 			i++;
-		if (!(tab[k] = (char *)malloc(sizeof(char) *
-		(get_word_length(s, c, i) + 1))))
+		if (!(tab[k] = ft_calloc(get_word_length(s, c, i) + 1, sizeof(char))))
 			return (ft_split_clean(tab, k));
 		while (s[i] && s[i] != c)
 			tab[k][j++] = s[i++];
-		tab[k++][j] = 0;
+		k++;
 	}
 	tab[k] = NULL;
 	return (tab);

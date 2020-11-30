@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 12:45:30 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 10:44:09 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/11/30 13:21:36 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,24 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*ptr;
-	unsigned long	i;
-	unsigned long	tmp;
+	char		*ptr;
+	size_t		i;
+	size_t		memlen;
 
-	if (!s || !(ptr = malloc(sizeof(char) * (len + 1))))
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	memlen = ft_strlen(&s[start]);
+	if (memlen < len)
+		len = memlen;
+	if (!(ptr = ft_calloc(len + 1, sizeof(char))))
 		return (NULL);
 	i = 0;
-	tmp = 0;
-	while (s[i] && tmp < len)
+	while (s[start + i] && i < len)
 	{
-		if (i >= start)
-			ptr[tmp++] = s[i];
+		ptr[i] = s[start + i];
 		i++;
 	}
-	ptr[tmp] = 0;
 	return (ptr);
 }
