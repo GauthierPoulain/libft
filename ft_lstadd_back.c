@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 14:33:09 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 14:47:31 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/25 15:47:15 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/25 15:56:50 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	int		count;
-	t_list	*next;
+	t_list	*last;
 
-	count = 0;
-	next = lst;
-	while (next)
+	if (!*alst)
+		*alst = new;
+	else
 	{
-		next = next->next;
-		count++;
+		last = *alst;
+		while (last->next)
+			last = last->next;
+		last->next = new;
 	}
-	return (count);
 }

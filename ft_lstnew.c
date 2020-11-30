@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstnew.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 16:06:09 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/26 10:19:34 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/25 13:02:45 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/25 14:28:18 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+t_list	*ft_lstnew(void *content)
 {
-	t_list	*tmp;
+	t_list	*lst;
 
-	if (*lst)
-	{
-		while (*lst)
-		{
-			tmp = (*lst)->next;
-			del((*lst)->content);
-			free(*lst);
-			*lst = tmp;
-		}
-	}
+	if (!(lst = malloc(sizeof(t_list))))
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }

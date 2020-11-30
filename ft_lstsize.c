@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstsize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 16:29:13 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 16:48:00 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/11/25 14:33:09 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/11/25 14:47:31 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int		ft_lstsize(t_list *lst)
 {
-	while (lst)
+	int		count;
+	t_list	*next;
+
+	count = 0;
+	next = lst;
+	while (next)
 	{
-		f(lst->content);
-		lst = lst->next;
+		next = next->next;
+		count++;
 	}
+	return (count);
 }
