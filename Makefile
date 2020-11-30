@@ -50,10 +50,6 @@ SRCS = \
 	ft_tolower.c  \
 	ft_toupper.c  \
 
-OBJS_BONUS = $(SRC_BONUS:.c=.o)
-SRC_BONUS = \
-
-
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
@@ -66,7 +62,6 @@ re: fclean all
 
 clean:
 	$(RM) $(OBJS)
-	$(RM) $(OBJS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
