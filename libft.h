@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 16:53:01 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 14:50:23 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char *s, int fd);
+void			*ft_realloc(void *s, size_t size);
 char			**ft_split(char const *s, char c);
 char			*ft_strcat(char *dest, char *src);
 char			*ft_strchr(const char *s, int c);
