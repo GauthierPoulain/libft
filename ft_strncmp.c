@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 08:53:31 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 08:59:27 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 07:43:12 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		casts2 = (unsigned char)*s2++;
 		if (casts1 != casts2)
 			return (casts1 - casts2);
-		if (casts1 == '\0')
+		if (!casts1)
 			return (0);
 	}
 	return (0);

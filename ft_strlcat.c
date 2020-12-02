@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 08:33:08 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 08:50:42 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 07:43:02 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char			*d;
-	char			*s;
+	char *d;
+	char *s;
 	unsigned long	dlen;
 	int				n;
 
 	d = dst;
 	s = (char *)src;
 	n = dstsize;
-	while (n-- != 0 && *d != '\0')
+	while (n-- != 0 && *d)
 		d++;
 	dlen = d - dst;
 	n = dstsize - dlen;
 	if (n == 0)
 		return (dlen + ft_strlen(s));
-	while (*s != '\0')
+	while (*s)
 	{
 		if (n != 1)
 		{
@@ -37,6 +37,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		}
 		s++;
 	}
-	*d = '\0';
+	*d = 0;
 	return (dlen + (s - src));
 }

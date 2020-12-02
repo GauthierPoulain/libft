@@ -6,13 +6,13 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 15:06:35 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 15:07:05 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 07:42:37 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char *ft_strcat(char *dest, char *src)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -24,6 +24,6 @@ char	*ft_strcat(char *dest, char *src)
 		dest[i + j] = src[j];
 		j++;
 	}
-	dest[i + j] = '\0';
+	dest[i + j] = 0;
 	return (dest);
 }

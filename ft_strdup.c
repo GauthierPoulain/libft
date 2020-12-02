@@ -6,15 +6,15 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 10:44:03 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 10:56:37 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 07:42:40 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char *ft_strdup(const char *s1)
 {
-	char	*str;
+	char *str;
 	int		len;
 	int		i;
 
@@ -27,6 +27,6 @@ char	*ft_strdup(const char *s1)
 		str[i] = s1[i];
 		i++;
 	}
-	str[i] = '\0';
+	str[i] = 0;
 	return (str);
 }
