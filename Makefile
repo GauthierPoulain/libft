@@ -1,3 +1,28 @@
+_END=\033[0m
+_BOLD=\033[1m
+_UNDER=\033[4m
+_REV=\033[7m
+
+# Colors
+_GREY=\033[30m
+_RED=\033[31m
+_GREEN=\033[32m
+_YELLOW=\033[33m
+_BLUE=\033[34m
+_PURPLE=\033[35m
+_CYAN=\033[36m
+_WHITE=\033[37m
+
+# Inverted, i.e. colored backgrounds
+_IGREY=\033[40m
+_IRED=\033[41m
+_IGREEN=\033[42m
+_IYELLOW=\033[43m
+_IBLUE=\033[44m
+_IPURPLE=\033[45m
+_ICYAN=\033[46m
+_IWHITE=\033[47m
+
 NAME = libft.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
@@ -52,20 +77,31 @@ SRCS = \
 	ft_toupper.c  \
 
 %.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	@printf "[ .. ] compile : $(_BOLD)$(<:.c=)$(_END)"
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) rcs $(NAME) $(OBJS)
+	@printf "[ .. ] building lib$(_END)"
+	@$(AR) rc $(NAME) $(OBJS)
+	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
+
+	@printf "[ .. ] creating index$(_END)"
+	@ranlib $(NAME)
+	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
+
 
 re: fclean all
 
 clean:
-	$(RM) $(OBJS)
+	@printf "remove objects files\n"
+	@$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@printf "remove lib file\n"
+	@$(RM) $(NAME)
 
 norm:
 	norminette *.[ch]
