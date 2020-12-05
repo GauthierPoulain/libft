@@ -24,11 +24,16 @@ _ICYAN=\033[46m
 _IWHITE=\033[47m
 
 NAME = libft.a
+
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
-HEADERS = libft.h
-OBJS = $(SRCS:.c=.o)
-SRCS = \
+
+INCLUDES = includes
+
+SRC_DIR = ./src
+OBJ_DIR = ./.obj
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+SRCS = $(addprefix $(SRC_DIR)/, \
 	ft_atoi.c \
 	ft_bzero.c  \
 	ft_calloc.c \
@@ -75,10 +80,12 @@ SRCS = \
 	ft_substr.c \
 	ft_tolower.c  \
 	ft_toupper.c  \
+	)
 
-%.o: %.c $(HEADERS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDES)/*.h
+	@mkdir -p $(OBJ_DIR)
 	@printf "[ .. ] compile : $(_BOLD)$(<:.c=)$(_END)"
-	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	@$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
 
 all: $(NAME)
