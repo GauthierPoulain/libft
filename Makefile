@@ -111,7 +111,8 @@ fclean: clean
 	@$(RM) $(NAME)
 
 norm:
-	norminette *.[ch]
+	norminette src/*
+	norminette includes/*
 
 build: fclean all
 	make clean
