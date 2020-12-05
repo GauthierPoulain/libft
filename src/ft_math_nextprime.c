@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_math_nextprime.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 16:25:57 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/05 18:46:58 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/12/05 18:44:09 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/12/05 19:10:30 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int			ft_find_next_prime(int nb)
 {
-	write(fd, &c, sizeof(c));
+	int		i;
+
+	i = nb;
+	while (ft_math_isprime(i) == 0)
+		i++;
+	return (i);
 }

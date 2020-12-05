@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gapoulai <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 13:36:23 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/01 13:36:24 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 18:46:58 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 int		ft_lstsize(t_list *lst)
 {

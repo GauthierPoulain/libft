@@ -6,11 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:56:58 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/25 09:08:55 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 18:46:58 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

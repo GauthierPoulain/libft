@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gapoulai <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 13:34:58 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/01 13:35:03 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 18:46:58 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {

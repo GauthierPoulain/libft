@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_math_isprime.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 16:25:57 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/05 18:46:58 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/12/05 18:43:09 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/12/05 18:43:18 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int		ft_math_isprime(int nb)
 {
-	write(fd, &c, sizeof(c));
+	int		i;
+
+	i = 2;
+	if (nb <= 1)
+		return (0);
+	while (i <= nb / i)
+		if (nb % i++ == 0)
+			return (0);
+	return (1);
 }

@@ -6,11 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 08:09:40 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 08:22:04 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 18:46:58 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

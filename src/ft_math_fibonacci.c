@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_math_fibonacci.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 16:25:57 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/05 18:46:58 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/12/05 18:38:33 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/12/05 18:39:22 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int		ft_math_fibonacci(int index)
 {
-	write(fd, &c, sizeof(c));
+	if (index < 0)
+		return (-1);
+	if (index == 0)
+		return (0);
+	else if (index == 1)
+		return (1);
+	else
+		return (ft_math_fibonacci(index - 1) + ft_math_fibonacci(index - 2));
 }

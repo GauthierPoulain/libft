@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_math_sqrt.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 16:25:57 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/05 18:46:58 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/12/05 18:41:21 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/12/05 18:42:00 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int			ft_math_sqrt(int nb)
 {
-	write(fd, &c, sizeof(c));
+	int		i;
+
+	if (nb < 0 || nb > 46340 * 46340)
+		return (0);
+	i = 1;
+	while (i * i < nb)
+		i++;
+	if (i * i == nb)
+		return (i);
+	return (0);
 }

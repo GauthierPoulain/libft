@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_math_power.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 16:25:57 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/05 18:46:58 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2020/12/05 18:37:43 by gapoulai          #+#    #+#             */
+/*   Updated: 2020/12/05 18:39:31 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-
-void	ft_putchar_fd(char c, int fd)
+int		ft_math_power(int nb, int power)
 {
-	write(fd, &c, sizeof(c));
+	if (power < 0)
+		return (0);
+	if (power < 1)
+		return (1);
+	else
+		return (nb * ft_math_power(nb, power - 1));
 }

@@ -28,12 +28,12 @@ NAME = libft.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
 
-INCLUDES = includes
+INCLUDES = ./libft.h
 
 SRC_DIR = ./src
 OBJ_DIR = ./.obj
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-SRCS = \
+SRCS = $(addprefix $(SRC_DIR)/, \
 	ft_atoi.c \
 	ft_bzero.c  \
 	ft_calloc.c \
@@ -53,6 +53,12 @@ SRCS = \
 	ft_lstclear.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
+	ft_math_factorial.c \
+	ft_math_fibonacci.c \
+	ft_math_isprime.c \
+	ft_math_nextprime.c \
+	ft_math_power.c \
+	ft_math_sqrt.c \
 	ft_memccpy.c  \
 	ft_memchr.c \
 	ft_memcmp.c \
@@ -80,25 +86,25 @@ SRCS = \
 	ft_substr.c \
 	ft_tolower.c  \
 	ft_toupper.c  \
-	
+	)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDES)/*.h
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDES)
 	@mkdir -p $(OBJ_DIR)
 	@printf "[ .. ] compile : $(_BOLD)$(<:.c=)$(_END)"
-	@$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@printf "$(_BOLD)$(shell ls ./$(OBJ_DIR)/ | wc -l)$(_END) object from $(_BOLD)$(shell ls ./$(SRC_DIR)/ | wc -l)$(_END) sources\n"
+	@zsh tools/diff.sh
 	@printf "[ .. ] building lib$(_END)"
 	@$(AR) rc $(NAME) $(OBJS)
 	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
-
 	@printf "[ .. ] creating index$(_END)"
 	@ranlib $(NAME)
 	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
-
 
 re: fclean all
 
@@ -113,8 +119,8 @@ fclean: clean
 	@printf "\r$(_RED)[ !! ]$(_END)\n"
 
 norm:
-	norminette src/*
-	norminette includes/*
+	@norminette src/*.[ch]
+	@norminette *.[ch]
 
 build: fclean all
 	make clean

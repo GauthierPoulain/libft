@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/01 14:50:23 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 19:27:45 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 void (*del)(void *));
 int				ft_lstsize(t_list *lst);
 t_list			*ft_lstnew(void *content);
+int				ft_math_factorial(int nb);
+int				ft_math_fibonacci(int index);
+int				ft_math_isprime(int nb);
+int				ft_find_next_prime(int nb);
+int				ft_math_power(int nb, int power);
+int				ft_math_sqrt(int nb);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
