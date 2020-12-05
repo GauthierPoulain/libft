@@ -33,7 +33,7 @@ INCLUDES = includes
 SRC_DIR = ./src
 OBJ_DIR = ./.obj
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-SRCS = $(addprefix $(SRC_DIR)/, \
+SRCS = \
 	ft_atoi.c \
 	ft_bzero.c  \
 	ft_calloc.c \
@@ -80,7 +80,7 @@ SRCS = $(addprefix $(SRC_DIR)/, \
 	ft_substr.c \
 	ft_tolower.c  \
 	ft_toupper.c  \
-	)
+	
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDES)/*.h
 	@mkdir -p $(OBJ_DIR)
@@ -103,12 +103,14 @@ $(NAME): $(OBJS)
 re: fclean all
 
 clean:
-	@printf "remove objects files\n"
+	@printf "[ .. ] remove objects files$(_END)"
 	@$(RM) $(OBJS)
+	@printf "\r$(_RED)[ !! ]$(_END)\n"
 
 fclean: clean
-	@printf "remove lib file\n"
+	@printf "[ .. ] remove lib file$(_END)"
 	@$(RM) $(NAME)
+	@printf "\r$(_RED)[ !! ]$(_END)\n"
 
 norm:
 	norminette src/*
