@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 08:33:08 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/02 07:43:02 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 03:54:23 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char *d;
-	char *s;
+	char			*d;
+	char			*s;
 	unsigned long	dlen;
 	int				n;
 
