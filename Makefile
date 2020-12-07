@@ -94,7 +94,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@printf "$(_BOLD)$(shell find . -type f -name "*.o" | wc -l)$(_END) object from $(_BOLD)$(shell find . -type f -name "*.c" | wc -l)$(_END) sources\n"
-	@printf "[ .. ] building lib$(_END)"
+	@printf "[ .. ] building $(NAME)$(_END)"
 	@$(AR) rc $(NAME) $(OBJS)
 	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
 	@printf "[ .. ] creating index$(_END)"
@@ -109,7 +109,7 @@ clean:
 	@printf "\r$(_RED)[ !! ]$(_END)\n"
 
 fclean: clean
-	@printf "[ .. ] remove lib file$(_END)"
+	@printf "[ .. ] remove $(NAME) file$(_END)"
 	@$(RM) $(NAME)
 	@printf "\r$(_RED)[ !! ]$(_END)\n"
 
