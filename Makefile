@@ -28,7 +28,7 @@ NAME = libft.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
 
-INCLUDES = ./libft.h
+HEADER = ./libft.h
 
 SRC_DIR = ./src
 OBJ_DIR = ./.obj
@@ -87,7 +87,7 @@ SRCS = \
 	ft_tolower.c  \
 	ft_toupper.c  \
 
-%.o: %.c $(INCLUDES)
+%.o: %.c $(HEADER)
 	@printf "[ .. ] compile : $(_BOLD)$(<:.c=)$(_END)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
