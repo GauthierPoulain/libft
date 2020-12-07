@@ -30,8 +30,6 @@ CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
 
 HEADER = ./libft.h
 
-SRC_DIR = ./src
-OBJ_DIR = ./.obj
 OBJS = $(SRCS:%.c=%.o)
 SRCS = \
 	ft_atoi.c \
