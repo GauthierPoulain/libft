@@ -32,8 +32,8 @@ INCLUDES = ./libft.h
 
 SRC_DIR = ./src
 OBJ_DIR = ./.obj
-OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-SRCS = $(addprefix $(SRC_DIR)/, \
+OBJS = $(SRCS:%.c=%.o)
+SRCS = \
 	ft_atoi.c \
 	ft_bzero.c  \
 	ft_calloc.c \
@@ -86,10 +86,8 @@ SRCS = $(addprefix $(SRC_DIR)/, \
 	ft_substr.c \
 	ft_tolower.c  \
 	ft_toupper.c  \
-	)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDES)
-	@mkdir -p $(OBJ_DIR)
+%.o: %.c $(INCLUDES)
 	@printf "[ .. ] compile : $(_BOLD)$(<:.c=)$(_END)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
@@ -97,8 +95,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDES)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@printf "$(_BOLD)$(shell ls ./$(OBJ_DIR)/ | wc -l)$(_END) object from $(_BOLD)$(shell ls ./$(SRC_DIR)/ | wc -l)$(_END) sources\n"
-	@zsh tools/diff.sh
+	@printf "$(_BOLD)$(shell find . -type f -name "*.o" | wc -l)$(_END) object from $(_BOLD)$(shell find . -type f -name "*.c" | wc -l)$(_END) sources\n"
 	@printf "[ .. ] building lib$(_END)"
 	@$(AR) rc $(NAME) $(OBJS)
 	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
@@ -123,6 +120,6 @@ norm:
 	@norminette *.[ch]
 
 build: fclean all
-	make clean
+	@make clean
 
 .PHONY: all re clean fclean norm
