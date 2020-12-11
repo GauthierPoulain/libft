@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
+/*   ft_nbr_base.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 12:19:38 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/11 12:30:10 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/11 12:49:54 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int		check_base(char *base)
 	return (1);
 }
 
-char			*ft_putnbr_base(int nb, char *base)
+char			*ft_nbr_base(int nb, char *base)
 {
 	long		n;
 	int			i;
