@@ -33,8 +33,10 @@ HEADER = ./libft.h
 OBJS = $(SRCS:%.c=%.o)
 SRCS = \
 	ft_atoi.c \
+	ft_atoi_base.c \
 	ft_bzero.c  \
 	ft_calloc.c \
+	ft_convert_base.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c  \
@@ -65,9 +67,11 @@ SRCS = \
 	ft_memset.c  \
 	ft_putchar_fd.c \
 	ft_putendl_fd.c \
+	ft_putnbr_base_fd.c \
 	ft_putnbr_fd.c \
 	ft_putstr_fd.c \
 	ft_realloc.c \
+	ft_rev_tab.c \
 	ft_split.c \
 	ft_strcat.c \
 	ft_strchr.c \
@@ -82,6 +86,7 @@ SRCS = \
 	ft_strrchr.c \
 	ft_strtrim.c \
 	ft_substr.c \
+	ft_swap.c \
 	ft_tolower.c  \
 	ft_toupper.c  \
 
