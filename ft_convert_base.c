@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 12:17:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/11 22:08:44 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/11 22:20:26 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	result = malloc(sizeof(char) * get_number_length(number, base_to));
 	last_index = display(number, base_to, result,
 		get_number_length(number, base_to) - 1);
-	result[last_index + 1] = '\0';
+	result[last_index + 1] = 0;
 	return (result);
 }
