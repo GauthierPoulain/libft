@@ -6,38 +6,62 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 12:17:14 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/11 12:45:47 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/11 22:20:26 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		check_base(char *base)
+static int	display(int nb, char *str, char *result, int index)
 {
-	int		i;
-	int		j;
+	unsigned int	nbr;
+	unsigned int	str_length;
 
-	i = -1;
-	j = 1;
-	if (ft_strlen(base) == 0 || ft_strlen(base) == 1)
-		return (0);
-	while (base[++i])
+	str_length = 0;
+	while (str[str_length])
+		str_length++;
+	if (nb < 0)
 	{
-		if (base[i] == '+' || base[i] == '-' || base[i] == '\r'
-			|| base[i] == '\v' || base[i] == '\t' || base[i] == '\f'
-			|| base[i] == ' ')
-			return (0);
-		while (base[i + j] != '\0')
-			if (base[i] == base[i + j++])
-				return (0);
-		j = 1;
+		result[index++] = '-';
+		nbr = nb * -1;
 	}
-	return (1);
+	else
+		nbr = nb;
+	if (nbr >= str_length)
+		display(nbr / str_length, str, result, index - 1);
+	result[index] = str[nbr % str_length];
+	return (index);
 }
 
-char			*ft_convert_base(char *nbr, char *base_from, char *base_to)
+static int	get_number_length(int number, char *base)
 {
-	if (check_base(base_from) == 1 && check_base(base_to) == 1)
-		return (ft_nbr_base(ft_atoi_base(nbr, base_from), base_to));
-	return (NULL);
+	int	length;
+	int	base_length;
+
+	base_length = 0;
+	while (base[base_length])
+		base_length++;
+	length = 0;
+	while (number >= base_length)
+	{
+		++length;
+		number /= base_length;
+	}
+	return (++length);
+}
+
+char		*ft_convert_base(char *nbr, char *base_from, char *base_to)
+{
+	char		*result;
+	int			number;
+	int			last_index;
+
+	if (!nbr || !base_from || !base_to)
+		return (0);
+	number = ft_atoi_base(nbr, base_from);
+	result = malloc(sizeof(char) * get_number_length(number, base_to));
+	last_index = display(number, base_to, result,
+		get_number_length(number, base_to) - 1);
+	result[last_index + 1] = 0;
+	return (result);
 }
