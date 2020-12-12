@@ -3,7 +3,6 @@ _BOLD=\033[1m
 _UNDER=\033[4m
 _REV=\033[7m
 
-# Colors
 _GREY=\033[30m
 _RED=\033[31m
 _GREEN=\033[32m
@@ -13,7 +12,6 @@ _PURPLE=\033[35m
 _CYAN=\033[36m
 _WHITE=\033[37m
 
-# Inverted, i.e. colored backgrounds
 _IGREY=\033[40m
 _IRED=\033[41m
 _IGREEN=\033[42m
@@ -22,6 +20,7 @@ _IBLUE=\033[44m
 _IPURPLE=\033[45m
 _ICYAN=\033[46m
 _IWHITE=\033[47m
+
 
 NAME = libft.a
 
@@ -91,38 +90,34 @@ SRCS = \
 	ft_toupper.c  \
 
 %.o: %.c $(HEADER)
-	@printf "[ .. ] compile : $(_BOLD)$(<:.c=)$(_END)"
+	@printf "$(_GREEN)$(_BOLD)+$(_END) compiling $(_BLUE)$(_BOLD)$<$(_END)\n"
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@printf "$(_BOLD)$(shell find . -type f -name "*.o" | wc -l)$(_END) object from $(_BOLD)$(shell find . -type f -name "*.c" | wc -l)$(_END) sources\n"
-	@printf "[ .. ] building $(NAME)$(_END)"
-	@$(AR) rc $(NAME) $(OBJS)
-	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
-	@printf "[ .. ] creating index$(_END)"
-	@ranlib $(NAME)
-	@printf "\r$(_GREEN)[ OK ]$(_END)\n"
+	@printf "$(_GREEN)$(_BOLD)+$(_END) building $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
+	@$(AR) rcs $(NAME) $(OBJS)
+	@printf "$(_GREEN)$(_END)"
+	@printf "$(_GREEN)| congratulation |$(_END)"
+	@printf "$(_GREEN)| congratulation |$(_END)"
 
-re: fclean all
+re: fclean
+	@$(MAKE) all
 
 clean:
-	@printf "[ .. ] remove objects files$(_END)"
+	@printf "$(_RED)$(_BOLD)-$(_END) remove objects files\n"
 	@$(RM) $(OBJS)
-	@printf "\r$(_RED)[ !! ]$(_END)\n"
 
 fclean: clean
-	@printf "[ .. ] remove $(NAME) file$(_END)"
+	@printf "$(_RED)$(_BOLD)-$(_END) remove $(NAME)\n"
 	@$(RM) $(NAME)
-	@printf "\r$(_RED)[ !! ]$(_END)\n"
-
 norm:
 	@norminette src/*.[ch]
 	@norminette *.[ch]
 
-build: fclean all
-	@make clean
+build: fclean
+	@$(MAKE) all
+	@$(MAKE) clean
 
-.PHONY: all re clean fclean norm
+.PHONY: all re clean fclean norm zsh
