@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/13 13:11:27 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/13 13:47:24 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ t_list			*ft_lstnew(void *content);
 int				ft_math_factorial(int nb);
 int				ft_math_fibonacci(int index);
 int				ft_math_isprime(int nb);
+long long		ft_math_max(long long a, long long b);
+long long		ft_math_min(long long a, long long b);
 int				ft_find_next_prime(int nb);
 int				ft_math_power(int nb, int power);
 int				ft_math_sqrt(int nb);

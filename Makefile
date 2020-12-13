@@ -58,6 +58,8 @@ SRCS = \
 	ft_math_factorial.c \
 	ft_math_fibonacci.c \
 	ft_math_isprime.c \
+	ft_math_max.c \
+	ft_math_min.c \
 	ft_math_nextprime.c \
 	ft_math_power.c \
 	ft_math_sqrt.c \
