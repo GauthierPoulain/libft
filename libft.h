@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/11 22:47:39 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/13 13:07:16 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
+size_t			ft_nblen(long long nb);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
