@@ -27,6 +27,8 @@ NAME = libft.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
 
+MAKE = make --no-print-directory
+
 HEADER = ./libft.h
 
 OBJS = $(SRCS:%.c=%.o)
@@ -98,9 +100,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@printf "$(_GREEN)$(_BOLD)+$(_END) building $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
 	@$(AR) rcs $(NAME) $(OBJS)
-	@printf "$(_GREEN)$(_END)"
-	@printf "$(_GREEN)| congratulation |$(_END)"
-	@printf "$(_GREEN)| congratulation |$(_END)"
 
 re: fclean
 	@$(MAKE) all
@@ -110,14 +109,12 @@ clean:
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@printf "$(_RED)$(_BOLD)-$(_END) remove $(NAME)\n"
+	@printf "$(_RED)$(_BOLD)-$(_END) remove $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
 	@$(RM) $(NAME)
 norm:
-	@norminette src/*.[ch]
 	@norminette *.[ch]
 
-build: fclean
-	@$(MAKE) all
+build: re
 	@$(MAKE) clean
 
 .PHONY: all re clean fclean norm zsh

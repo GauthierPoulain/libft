@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 12:25:17 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/11 22:08:31 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/13 10:12:46 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	get_nb(char c, char *base)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (base[i] && base[i] != c)
@@ -22,13 +22,13 @@ static int	get_nb(char c, char *base)
 	return (i);
 }
 
-int	ft_atoi_base(char *str, char *base)
+int			ft_atoi_base(char *str, char *base)
 {
-	int	s;
-	int	i;
-	int	res;
-	int	negative;
-	int	base_length;
+	int		s;
+	int		i;
+	int		res;
+	int		negative;
+	int		base_length;
 
 	base_length = 0;
 	while (base[base_length])
