@@ -105,7 +105,7 @@ re: fclean
 	@$(MAKE) all
 
 clean:
-	@printf "$(_RED)$(_BOLD)-$(_END) remove objects files\n"
+	@printf "$(_RED)$(_BOLD)-$(_END) remove $(_BLUE)$(_BOLD)$(NAME)$(_END) objects files\n"
 	@$(RM) $(OBJS)
 
 fclean: clean
