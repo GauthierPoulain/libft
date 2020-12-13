@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 13:06:43 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/13 13:07:41 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/13 16:25:01 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t		ft_nblen(long long nb)
 	size_t	len;
 
 	len = 0;
+	if (!nb)
+		return (1);
 	while (nb)
 	{
 		nb /= 10;
