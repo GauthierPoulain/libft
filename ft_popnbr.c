@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 17:00:35 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/13 17:01:19 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/13 17:03:06 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,5 @@ int		ft_popnbr(int base, int next)
 {
 	base *= 10;
 	base += next;
+	return (base);
 }
