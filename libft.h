@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/13 20:21:54 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/13 21:04:44 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int				ft_atoi_base(char *str, char *base);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_convert_base(char *nbr, char *base_from, char *base_to);
 int				ft_count(char *str, int c);
+int				ft_get_index(char *s, int c);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);

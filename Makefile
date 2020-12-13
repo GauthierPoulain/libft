@@ -39,6 +39,7 @@ SRCS = \
 	ft_calloc.c \
 	ft_convert_base.c \
 	ft_count.c \
+	ft_get_index.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c  \
