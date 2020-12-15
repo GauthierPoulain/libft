@@ -118,6 +118,7 @@ clean:
 fclean: clean
 	@printf "$(_RED)$(_BOLD)-$(_END) remove $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
 	@$(RM) $(NAME)
+
 norm:
 	@norminette *.[ch]
 
