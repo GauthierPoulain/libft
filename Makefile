@@ -100,7 +100,7 @@ SRCS = \
 
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
-	@time $(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
