@@ -99,24 +99,24 @@ SRCS = \
 	ft_toupper.c  \
 
 %.o: %.c $(HEADER)
-	@printf "$(_GREEN)$(_BOLD)+$(_END) compiling $(_BLUE)$(_BOLD)$<$(_END)\n"
+	@printf "[ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(shell pwd)/$(_BLUE)$(_BOLD)$<$(_END)\n"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@printf "$(_GREEN)$(_BOLD)+$(_END) building $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
+	@printf "[ $(_GREEN)$(_BOLD)+$(_END) ][ building ] $(shell pwd)/$(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
 	@$(AR) rcs $(NAME) $(OBJS)
 
 re: fclean
 	@$(MAKE) all
 
 clean:
-	@printf "$(_RED)$(_BOLD)-$(_END) remove $(_BLUE)$(_BOLD)$(NAME)$(_END) objects files\n"
+	@find . -name "*.o" -delete -printf "[ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(shell pwd)/$(_BLUE)$(_BOLD)%f $(_END)\n"
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@printf "$(_RED)$(_BOLD)-$(_END) remove $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
+	@find . -name "$(NAME)" -delete -printf "[ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(shell pwd)/$(_BLUE)$(_BOLD)%f $(_END)\n"
 	@$(RM) $(NAME)
 
 norm:
@@ -125,4 +125,4 @@ norm:
 build: re
 	@$(MAKE) clean
 
-.PHONY: all re clean fclean norm zsh
+.PHONY: all re clean fclean norm build
