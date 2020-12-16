@@ -113,11 +113,9 @@ re: fclean
 
 clean:
 	@find . -name "*.o" -delete -printf "[ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(shell pwd)/$(_BLUE)$(_BOLD)%f $(_END)\n"
-	@$(RM) $(OBJS)
 
 fclean: clean
 	@find . -name "$(NAME)" -delete -printf "[ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(shell pwd)/$(_BLUE)$(_BOLD)%f $(_END)\n"
-	@$(RM) $(NAME)
 
 norm:
 	@norminette *.[ch]
