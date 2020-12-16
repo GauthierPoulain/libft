@@ -6,14 +6,14 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:54:15 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/23 14:54:17 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 13:46:15 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
+	if (c >= 'A' && c <= 'Z')
+		return (c + ('a' - 'A'));
 	else
 		return (c);
 }

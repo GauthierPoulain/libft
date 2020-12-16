@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 08:53:31 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/07 21:23:30 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 13:48:23 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	while (n-- > 0)
 	{
-		casts1 = (unsigned char)*s1++;
-		casts2 = (unsigned char)*s2++;
+		casts1 = *s1++;
+		casts2 = *s2++;
 		if (casts1 != casts2)
 			return (casts1 - casts2);
 		if (!casts1)

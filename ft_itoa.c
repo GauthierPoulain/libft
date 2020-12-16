@@ -6,26 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 09:09:24 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/07 21:23:30 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 13:51:42 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_itoa_getsize(int n)
-{
-	int		count;
-
-	count = 0;
-	if (n < 0)
-		n *= -1;
-	while (n)
-	{
-		n /= 10;
-		count++;
-	}
-	return (count);
-}
 
 char		*ft_itoa(int n)
 {
@@ -35,7 +20,7 @@ char		*ft_itoa(int n)
 	long int	tmp;
 
 	tmp = n;
-	count = ft_itoa_getsize(n);
+	count = ft_nblen(n);
 	if (tmp < 0 || count == 0)
 		count++;
 	if (!(res = ft_calloc(count + 1, sizeof(char))))

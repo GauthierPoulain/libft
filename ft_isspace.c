@@ -6,14 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 09:36:23 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/24 09:37:14 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 14:29:18 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isspace(int c)
 {
-	if (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t'
-	|| c == '\v')
-		return (1);
-	return (0);
+	return ((c >= 9 && c <= 13) || c == ' ');
 }

@@ -6,16 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:39:27 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/11/23 14:39:29 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 14:29:25 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isalpha(int c)
 {
-	if (c >= 65 && c <= 90)
-		return (1);
-	else if (c >= 97 && c <= 122)
-		return (1);
-	else
-		return (0);
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }
