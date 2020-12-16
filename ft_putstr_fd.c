@@ -6,15 +6,15 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:27:22 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/07 21:23:30 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 11:11:08 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+size_t	ft_putstr_fd(char *s, int fd)
 {
 	if (s)
-		while (*s)
-			ft_putchar_fd(*s++, fd);
+		write(fd, s, ft_strlen(s));
+	return (ft_strlen(s));
 }

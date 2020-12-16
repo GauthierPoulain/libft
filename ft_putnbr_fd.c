@@ -6,13 +6,13 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:32:11 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/13 13:11:16 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 11:10:22 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(long long n, int fd)
+size_t	ft_putnbr_fd(long long n, int fd)
 {
 	if (n < 0)
 	{
@@ -26,4 +26,5 @@ void	ft_putnbr_fd(long long n, int fd)
 	}
 	else
 		ft_putchar_fd((n % 10) + '0', fd);
+	return (ft_nblen(n));
 }
