@@ -97,6 +97,7 @@ SRCS = \
 	ft_swap.c \
 	ft_tolower.c  \
 	ft_toupper.c  \
+	ft_putstrn_fd.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"

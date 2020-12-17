@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/16 11:11:21 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 12:50:50 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ size_t			ft_putchar_fd(char c, int fd);
 size_t			ft_putendl_fd(char *s, int fd);
 size_t			ft_putnbr_fd(long long n, int fd);
 size_t			ft_putstr_fd(char *s, int fd);
+size_t			ft_putstrn_fd(char *s, size_t n, int fd);
 
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstnew(void *content);
