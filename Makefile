@@ -99,22 +99,23 @@ SRCS = \
 	ft_toupper.c  \
 
 %.o: %.c $(HEADER)
-	@printf "[ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
+	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
 	@$(AR) rcs $(NAME) $(OBJS)
 
 re: fclean
 	@$(MAKE) all
 
 clean:
-	@find . -name "*.o" -delete -printf "[ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)%f $(_END)\n"
+	@find . -name "*.o" -delete -printf "[ $(_RED)$(_BOLD)--$(_END) ][ removing ] $(_BLUE)$(_BOLD)%f $(_END)\n"
 
 fclean: clean
-	@find . -name "$(NAME)" -delete -printf "[ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)%f $(_END)\n"
+	@find . -name "$(NAME)" -delete -printf "[ $(_RED)$(_BOLD)--$(_END) ][ removing ] $(_BLUE)$(_BOLD)%f $(_END)\n"
 
 norm:
 	@norminette *.[ch]
