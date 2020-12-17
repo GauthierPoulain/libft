@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:25:57 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/16 13:42:57 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 10:31:58 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 size_t	ft_putchar_fd(char c, int fd)
 {
-	return (write(fd, &c, sizeof(char)));
+	return (write(fd, &c, 1));
 }
