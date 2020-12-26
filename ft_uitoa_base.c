@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 13:31:17 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/26 13:49:06 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 15:04:09 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*set_base_u(unsigned long hexa, int base, char *str, int i)
 		if ((hexa % base) < 10)
 			str[i - 1] = (hexa % base) + '0';
 		else
-			str[i - 1] = (hexa % base) + 55;
+			str[i - 1] = (hexa % base) + 87;
 		hexa /= base;
 		i--;
 	}
