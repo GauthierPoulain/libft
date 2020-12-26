@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 13:42:55 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/26 13:45:03 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 13:47:16 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ void	ft_tolowercase(char *s)
 	{
 		if (*s >= 'A' && *s <= 'Z')
 			*s = ft_tolower(*s);
+		s++;
 	}
 }
