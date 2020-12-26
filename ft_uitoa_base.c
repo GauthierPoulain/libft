@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 13:31:17 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/26 13:33:34 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 13:49:06 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char		*ft_uitoa_base(unsigned long nbr, int base)
 	}
 	if (!(str = malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	str[i] = '\0';
+	str[i] = 0;
 	str = set_base_u(hexa, base, str, i);
 	return (str);
 }
