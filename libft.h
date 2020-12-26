@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/17 12:50:50 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 13:32:37 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ char			*ft_convert_base(char *nbr, char *base_from, char *base_to);
 char			*ft_itoa(int n);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_itoa_base(unsigned int nbr, int base);
+char			*ft_uitoa_base(unsigned long nbr, int base);
 
 int				ft_tolower(int c);
 int				ft_find_next_prime(int nb);
