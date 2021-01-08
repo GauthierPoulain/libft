@@ -6,13 +6,11 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 10:14:07 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/08 10:35:04 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/08 10:43:09 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
 
 static char	*fetch_line(char *str)
 {
