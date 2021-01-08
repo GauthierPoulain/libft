@@ -105,6 +105,8 @@ SRCS = \
 	ft_uitoa.c \
 	ft_gnl.c \
 
+$(PRINTF_OBJS) = 
+
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -113,7 +115,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
-	@$(AR) rcs $(NAME) $(OBJS)
+	@$(AR) rcs $(NAME) $(OBJS) $(PRINTF_OBJS)
 
 re: fclean
 	@$(MAKE) all
