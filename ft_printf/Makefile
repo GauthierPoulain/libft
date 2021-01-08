@@ -55,7 +55,8 @@ $(NAME): $(OBJS)
 	@cp ../libft.a $(NAME)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
 	@$(AR) rcs $(NAME) $(OBJS)
-	cp $(NAME) ./libft.a
+	@printf "[ $(_PURPLE)$(_BOLD)>>$(_END) ][ copying ] $(_BLUE)$(_BOLD)$(NAME)$(_END) to $(_BLUE)$(_BOLD)libft/libft.a$(_END)\n"
+	@cp $(NAME) ../libft.a
 
 clean:
 	@printf "[ $(_RED)$(_BOLD)--$(_END) ][ removing ] $(_BLUE)$(_BOLD)printf objs $(_END)\n"

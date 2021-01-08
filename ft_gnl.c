@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 10:14:07 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/08 10:43:09 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/08 11:07:34 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ static char	*fetch_save(char *save)
 	free(save);
 	return (res);
 }
+
+// #include <stdio.h>
 
 int			ft_gnl(int fd, char **line)
 {

@@ -105,8 +105,6 @@ SRCS = \
 	ft_uitoa.c \
 	ft_gnl.c \
 
-$(PRINTF_OBJS) = 
-
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -115,18 +113,22 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
-	@$(AR) rcs $(NAME) $(OBJS) $(PRINTF_OBJS)
+	@$(AR) rcs $(NAME) $(OBJS)
+	@$(MAKE) -C ./ft_printf
+	@printf "[ $(_GREEN)$(_BOLD):)$(_END) ][ done ] $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
 
 re: fclean
 	@$(MAKE) all
 
 clean:
 	@$(RM) $(OBJS)
-	@printf "[ $(_RED)$(_BOLD)--$(_END) ][ removing ] $(_BLUE)$(_BOLD)objs $(_END)\n"
+	@printf "[ $(_RED)$(_BOLD)--$(_END) ][ removing ] $(_BLUE)$(_BOLD)libft objs $(_END)\n"
+	@$(MAKE) clean -C ./ft_printf
 
 fclean: clean
 	@$(RM) $(NAME)
 	@printf "[ $(_RED)$(_BOLD)--$(_END) ][ removing ] $(_BLUE)$(_BOLD)$(NAME) $(_END)\n"
+	@$(MAKE) fclean -C ./ft_printf
 
 norm:
 	@norminette *.[ch]

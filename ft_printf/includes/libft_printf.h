@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 18:58:25 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/08 10:51:11 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/08 10:59:48 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stddef.h>
 # include <stdarg.h>
 # include <stdlib.h>
-# include "../libft.h"
+# include "../../libft.h"
 
 # define CHARSET "cspdiuxXoO%"
 
