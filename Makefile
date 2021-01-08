@@ -104,6 +104,7 @@ SRCS = \
 	ft_touppercase.c \
 	ft_uitoa.c \
 	ft_gnl.c \
+	ft_ctos.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
