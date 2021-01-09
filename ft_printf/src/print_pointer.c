@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:31:20 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/03 01:55:36 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 02:55:27 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void		ft_minus(t_flags *flags, char *tmp, unsigned long nbr)
 		else
 		{
 			print_width(flags->dot, ft_strlen(tmp), 1, flags);
-			flags->print += ft_putstr_fd(tmp, 1);
+			flags->print += ft_putstr_fd(tmp, flags->fd);
 			if ((int)ft_strlen(tmp) < flags->dot)
 				print_width(flags->width, flags->dot, 0, flags);
 			else
@@ -43,7 +43,7 @@ static void		ft_not_minus(t_flags *flags, char *tmp, int nbr)
 		else
 			print_width(flags->width, ft_strlen(tmp), 0, flags);
 		print_width(flags->dot, ft_strlen(tmp), 1, flags);
-		flags->print += ft_putstr_fd(tmp, 1);
+		flags->print += ft_putstr_fd(tmp, flags->fd);
 	}
 	else
 		print_spaces(flags, tmp);

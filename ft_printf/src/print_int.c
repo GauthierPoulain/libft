@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 11:33:17 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/03 02:12:17 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 02:51:44 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ static void	int_print_minus(t_flags *flags, char *tmp)
 {
 	if ((int)ft_strlen(tmp) > flags->dot)
 	{
-		flags->print += ft_putstr_fd(tmp, 1);
+		flags->print += ft_putstr_fd(tmp, flags->fd);
 		print_width(flags->width, ft_strlen(tmp), 0, flags);
 	}
 	else
 	{
-		flags->print += ft_putchar_fd('-', 1);
+		flags->print += ft_putchar_fd('-', flags->fd);
 		print_width(flags->dot, ft_strlen(tmp) - 1, 1, flags);
-		flags->print += ft_putstr_fd(tmp + 1, 1);
+		flags->print += ft_putstr_fd(tmp + 1, flags->fd);
 		if (flags->dot)
 			print_width(flags->width, flags->dot + 1, 0, flags);
 		else
@@ -40,7 +40,7 @@ static void	int_minus(t_flags *flags, int nb, char *tmp)
 	else
 	{
 		print_width(flags->dot, ft_strlen(tmp), 1, flags);
-		flags->print += ft_putstr_fd(tmp, 1);
+		flags->print += ft_putstr_fd(tmp, flags->fd);
 		if ((int)ft_strlen(tmp) < flags->dot)
 			print_width(flags->width, flags->dot, 0, flags);
 		else
@@ -55,13 +55,13 @@ static void	int_print_zero(t_flags *flags, int nb, char *tmp)
 		if (flags->has_dot)
 		{
 			print_width(flags->width, ft_strlen(tmp), 0, flags);
-			flags->print += ft_putstr_fd(tmp, 1);
+			flags->print += ft_putstr_fd(tmp, flags->fd);
 		}
 		else
 		{
-			flags->print += ft_putchar_fd('-', 1);
+			flags->print += ft_putchar_fd('-', flags->fd);
 			print_width(flags->width, ft_strlen(tmp), 1, flags);
-			flags->print += ft_putstr_fd(tmp + 1, 1);
+			flags->print += ft_putstr_fd(tmp + 1, flags->fd);
 		}
 	}
 	else
@@ -74,7 +74,7 @@ void		print_int(t_flags *flags, int nb)
 
 	tmp = ft_itoa(nb);
 	if (flags->space)
-		flags->print += ft_putchar_fd(' ', 1);
+		flags->print += ft_putchar_fd(' ', flags->fd);
 	if (flags->minus)
 	{
 		if (flags->has_dot)

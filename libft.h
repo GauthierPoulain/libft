@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/08 07:17:06 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 02:58:01 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define stdin 0
+# define stdout 1
+# define stderr 2
 
 typedef struct	s_list
 {
@@ -84,7 +88,7 @@ int				ft_math_power(int nb, int power);
 int				ft_popnbr(int base, int next);
 int				ft_toupper(int c);
 int				ft_gnl(int fd, char **line);
-int				ft_printf(const char *s, ...);
+int				ft_printf(int fd, const char *s, ...);
 
 long long		ft_math_max(long long a, long long b);
 long long		ft_math_min(long long a, long long b);

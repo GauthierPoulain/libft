@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 14:52:17 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/28 19:01:04 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 02:51:05 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ static void	longerthadot(t_flags *flags, char *str)
 		print_width(flags->width, ft_strlen(str), 0, flags);
 	else if (flags->zero)
 	{
-		flags->print += ft_putchar_fd('-', 1);
+		flags->print += ft_putchar_fd('-', flags->fd);
 		print_width(flags->width, ft_strlen(str), 1, flags);
-		flags->print += ft_putstr_fd(str + 1, 1);
+		flags->print += ft_putstr_fd(str + 1, flags->fd);
 		return ;
 	}
 	else
 		print_width(flags->width, ft_strlen(str), 0, flags);
-	flags->print += ft_putstr_fd(str, 1);
+	flags->print += ft_putstr_fd(str, flags->fd);
 }
 
 static void	print_nb_neg(t_flags *flags, char *str)
@@ -38,9 +38,9 @@ static void	print_nb_neg(t_flags *flags, char *str)
 			print_width(flags->width, flags->dot + 1, 0, flags);
 		else
 			print_width(flags->width, ft_strlen(str), 0, flags);
-		flags->print += ft_putchar_fd('-', 1);
+		flags->print += ft_putchar_fd('-', flags->fd);
 		print_width(flags->dot, ft_strlen(str) - 1, 1, flags);
-		flags->print += ft_putstr_fd(str + 1, 1);
+		flags->print += ft_putstr_fd(str + 1, flags->fd);
 	}
 }
 
@@ -57,6 +57,6 @@ void		int_print_dot(t_flags *flags, int nb, char *str)
 		else
 			print_width(flags->width, ft_strlen(str), flags->zero, flags);
 		print_width(flags->dot, ft_strlen(str), 1, flags);
-		flags->print += ft_putstr_fd(str, 1);
+		flags->print += ft_putstr_fd(str, flags->fd);
 	}
 }

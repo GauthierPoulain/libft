@@ -6,13 +6,13 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:40:44 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/03 02:32:11 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 02:41:56 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft_printf.h"
 
-void		init_flags(t_flags *flags)
+void		init_flags(t_flags *flags, int fd)
 {
 	flags->dot = 0;
 	flags->has_dot = 0;
@@ -24,6 +24,7 @@ void		init_flags(t_flags *flags)
 	flags->width = 0;
 	flags->zero = 0;
 	flags->space = 0;
+	flags->fd = fd;
 }
 
 void		reset_flags(t_flags *flags)

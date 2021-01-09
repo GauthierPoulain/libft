@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 18:58:25 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:48 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 02:42:09 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct	s_flags
 	char		type;
 	int			len;
 	int			space;
-	char		*tmp;
+	int			fd;
 }				t_flags;
 
 int				parse_flags(t_flags *flags, va_list lst, char *s);
@@ -41,7 +41,7 @@ void			parse_minus(t_flags *flags);
 void			parse_star(va_list lst, t_flags *flags);
 void			parse_digit(char c, t_flags *flags);
 
-void			init_flags(t_flags *flags);
+void			init_flags(t_flags *flags, int fd);
 void			reset_flags(t_flags *flags);
 
 void			get_type(t_flags *flags, va_list lst);

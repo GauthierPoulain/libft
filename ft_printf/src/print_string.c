@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 15:21:26 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/08 11:07:30 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/09 02:55:50 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ static void	str_print_dot(t_flags *flags, char *str, size_t len)
 		print_width(flags->width, 0, 0, flags);
 	else if (flags->minus)
 	{
-		flags->print += ft_putstrn_fd(str, flags->dot, 1);
+		flags->print += ft_putstrn_fd(str, flags->dot, flags->fd);
 		print_width(flags->width, flags->dot, 0, flags);
 	}
 	else
 	{
 		print_width(flags->width, flags->dot, 0, flags);
-		flags->print += ft_putstrn_fd(str, flags->dot, 1);
+		flags->print += ft_putstrn_fd(str, flags->dot, flags->fd);
 	}
 }
 
@@ -43,7 +43,7 @@ void		print_string(t_flags *flags, char *str)
 			str_print_dot(flags, str, len);
 		else
 		{
-			flags->print += ft_putstr_fd(str, 1);
+			flags->print += ft_putstr_fd(str, flags->fd);
 			print_width(flags->width, ft_strlen(str), 0, flags);
 		}
 	}
@@ -52,6 +52,6 @@ void		print_string(t_flags *flags, char *str)
 	else
 	{
 		print_width(flags->width, ft_strlen(str), 0, flags);
-		flags->print += ft_putstr_fd(str, 1);
+		flags->print += ft_putstr_fd(str, flags->fd);
 	}
 }
