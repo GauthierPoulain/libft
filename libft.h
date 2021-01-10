@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/09 02:58:01 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/10 09:48:51 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define stdin 0
-# define stdout 1
-# define stderr 2
+# define STDIN 0
+# define STDOUT 1
+# define STDERR 2
 
 typedef struct	s_list
 {
