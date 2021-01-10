@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:37:42 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/10 09:58:46 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/10 10:02:03 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_printf(const char *s, ...)
 }
 
 
-int		ft_sprintf(int fd, const char *s, ...)
+int		ft_fprintf(int fd, const char *s, ...)
 {
 	va_list		lst;
 	t_flags		flags;
