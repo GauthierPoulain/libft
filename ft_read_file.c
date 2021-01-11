@@ -6,15 +6,15 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 06:04:43 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/11 07:27:06 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/11 08:13:12 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char **add_line(char **src, char *line, int i)
+static char	**add_line(char **src, char *line, int i)
 {
-	char **new;
+	char	**new;
 	int		j;
 
 	new = ft_calloc(i + 2, sizeof(char *));
@@ -33,16 +33,17 @@ static char **add_line(char **src, char *line, int i)
 	return (new);
 }
 
-char **ft_read_file(int fd)
+char		**ft_read_file(int fd)
 {
-	char *line;
-	char **file;
+	char	*line;
+	char	**file;
 	int		i;
 	int		ret;
 
 	i = 0;
 	ret = 1;
-	while (ret) {
+	while (ret)
+	{
 		ret = ft_gnl(fd, &line);
 		if (ret == -1)
 			return (NULL);
@@ -51,18 +52,4 @@ char **ft_read_file(int fd)
 			return (NULL);
 	}
 	return (file);
-}
-
-
-#include <fcntl.h>
-
-int main()
-{
-	int fd = open("./libft.h", O_RDONLY);
-	ft_printf("%d\n", fd);
-
-	char **file = ft_read_file(fd);
-	ft_print_matrice(file);
-	close(fd);
-	return 0;
 }
