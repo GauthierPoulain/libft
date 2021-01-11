@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/10 10:01:59 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/11 06:00:58 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ int				ft_toupper(int c);
 int				ft_gnl(int fd, char **line);
 int				ft_printf(const char *s, ...);
 int				ft_fprintf(int fd, const char *s, ...);
+int				ft_startwith(char *str, char *start);
+int				ft_endwith(char *str, char *end);
 
 long long		ft_math_max(long long a, long long b);
 long long		ft_math_min(long long a, long long b);
