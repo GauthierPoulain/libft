@@ -139,7 +139,8 @@ fclean: clean
 norm:
 	@norminette *.[ch]
 
-build: re
-	@$(MAKE) clean
+test: all
+	@$(CC) $(CFLAGS) -g main.c -L. -lft -o test
+	valgrind --leak-check=yes ./test
 
-.PHONY: all re clean fclean norm build
+.PHONY: all re clean fclean norm build test

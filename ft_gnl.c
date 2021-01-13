@@ -6,16 +6,16 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 10:14:07 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/10 09:48:54 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 05:56:32 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*fetch_line(char *str)
+char *fetch_line(char *str)
 {
 	int		i;
-	char	*res;
+	char *res;
 
 	i = 0;
 	if (!str)
@@ -34,9 +34,9 @@ static char	*fetch_line(char *str)
 	return (res);
 }
 
-static char	*fetch_save(char *save)
+char *fetch_save(char *save)
 {
-	char	*res;
+	char *res;
 	int		i;
 	int		j;
 
@@ -61,28 +61,39 @@ static char	*fetch_save(char *save)
 	return (res);
 }
 
-int			ft_gnl(int fd, char **line)
+static void	multiple_free(char **save, char *tmp, char *buffer)
 {
-	char		*buffer;
-	static char	*save[10240];
+	free(*save);
+	*save = tmp;
+	free(tmp);
+	free(buffer);
+}
+
+int		ft_gnl(int fd, char **line)
+{
+	char *buffer;
+	static char *save;
 	int			readvalue;
+	char		*tmp;
 
 	readvalue = 1;
-	if (fd < 0 || !line || !(buffer = malloc(sizeof(char) * (1 + 1))))
+	if (fd < 0 || !line || GNL_B_SIZE < 1 ||
+		!(buffer = malloc(sizeof(char) * (GNL_B_SIZE + 1))))
 		return (-1);
-	while (readvalue != 0 && !ft_strchr(save[fd], 10))
+	while (readvalue != 0 && !ft_strchr(save, 10))
 	{
-		if ((readvalue = read(fd, buffer, 1)) == -1)
+		if ((readvalue = read(fd, buffer, GNL_B_SIZE)) == -1)
 		{
 			free(buffer);
 			return (-1);
 		}
 		buffer[readvalue] = 0;
-		save[fd] = ft_strjoin(save[fd], buffer);
+		tmp = ft_strjoin(save, buffer);
+		multiple_free(&save, tmp, buffer);
 	}
 	free(buffer);
-	*line = fetch_line(save[fd]);
-	save[fd] = fetch_save(save[fd]);
+	*line = fetch_line(save);
+	save = fetch_save(save);
 	if (readvalue == 0)
 		return (0);
 	return (1);

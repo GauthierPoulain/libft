@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 06:04:43 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/11 08:13:12 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 05:35:48 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static char	**add_line(char **src, char *line, int i)
 	while (j < i)
 	{
 		new[j] = ft_strdup(src[j]);
-		free(src[j]);
-		j++;
+		free(src[j++]);
 	}
+	free(src);
 	new[j++] = ft_strdup(line);
 	new[j] = NULL;
 	free(line);
@@ -47,7 +47,9 @@ char		**ft_read_file(int fd)
 		ret = ft_gnl(fd, &line);
 		if (ret == -1)
 			return (NULL);
-		file = add_line(file, line, i++);
+		if (*line)
+			file = add_line(file, line, i++);
+		free(line);
 		if (!file)
 			return (NULL);
 	}
