@@ -141,6 +141,6 @@ norm:
 
 test: all
 	@$(CC) $(CFLAGS) -g main.c -L. -lft -o test
-	valgrind --leak-check=yes ./test
+	# valgrind --leak-check=yes ./test
 
 .PHONY: all re clean fclean norm build test
