@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/13 01:20:44 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 03:21:42 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void			ft_swap(char *a, char *b);
 void			ft_tolowercase(char *s);
 void			ft_touppercase(char *s);
 void			ft_print_matrice(char **matrice);
+void			ft_free_tab(char **tab);
 
 char			*ft_strnstr(const char *haystack,
 const char *needle, size_t len);
