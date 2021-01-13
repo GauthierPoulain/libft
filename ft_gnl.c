@@ -6,93 +6,58 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 10:14:07 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/13 06:58:14 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 07:30:11 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*fetch_line(char *str)
+static char	*strjoin_free(char *s1, char c)
 {
 	int		i;
-	char	*res;
+	int		tlen;
+	char	*ret;
 
 	i = 0;
-	if (!str)
-		return (NULL);
-	while (str[i] && str[i] != 10)
-		i++;
-	if (!(res = malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	i = 0;
-	while (str[i] && str[i] != 10)
+	if (!s1)
 	{
-		res[i] = str[i];
+		if (!(ret = malloc(sizeof(char) * 2)))
+			return (0);
+		ret[0] = c;
+		ret[1] = 0;
+		return (ret);
+	}
+	tlen = ft_strlen(s1) + 1;
+	if (!(ret = malloc(sizeof(char) * (tlen + 1))))
+		return (0);
+	while (s1[i])
+	{
+		ret[i] = s1[i];
 		i++;
 	}
-	res[i] = 0;
-	return (res);
-}
-
-char		*fetch_save(char *save)
-{
-	char	*res;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	if (!save)
-		return (NULL);
-	while (save[i] && save[i] != 10)
-		i++;
-	if (!save[i])
-	{
-		free(save);
-		return (NULL);
-	}
-	if (!(res = malloc(sizeof(char) * ((ft_strlen(save) - i) + 1))))
-		return (NULL);
-	i++;
-	while (save[i])
-		res[j++] = save[i++];
-	res[j] = 0;
-	free(save);
-	return (res);
-}
-
-static void	multiple_free(char **save, char *tmp, char *buffer)
-{
-	free(*save);
-	*save = tmp;
-	free(tmp);
-	free(buffer);
+	ret[i] = c;
+	ret[i + 1] = 0;
+	free(s1);
+	return (ret);
 }
 
 int			ft_gnl(int fd, char **line)
 {
-	char		*buffer;
-	static char *save;
+	char		buffer;
+	int			ret;
 	int			readvalue;
-	char		*tmp;
 
-	readvalue = 1;
-	if (fd < 0 || !line || GNL_B_SIZE < 1 ||
-		!(buffer = malloc(sizeof(char) * (GNL_B_SIZE + 1))))
+	ret = 0;
+	if (!line)
 		return (-1);
-	while (readvalue != 0 && !ft_strchr(save, 10))
-	{
-		if ((readvalue = read(fd, buffer, GNL_B_SIZE)) == -1)
-		{
-			free(buffer);
-			return (-1);
-		}
-		buffer[readvalue] = 0;
-		tmp = ft_strjoin(save, buffer);
-		multiple_free(&save, tmp, buffer);
-	}
-	free(buffer);
-	*line = fetch_line(save);
-	save = fetch_save(save);
-	return (readvalue != 0);
+	if (!(*line = malloc(sizeof(char) * 1)))
+		return (-1);
+	*line[0] = 0;
+	while ((readvalue = read(fd, &buffer, 1)) && buffer != '\n')
+		*line = strjoin_free(*line, buffer);
+	if (!*line)
+		*line = strjoin_free(*line, '\0');
+	if (readvalue > 0)
+		ret = 1;
+	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/13 06:47:15 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 07:25:06 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # define STDIN 0
 # define STDOUT 1
 # define STDERR 2
-# define GNL_B_SIZE 1
 
 typedef struct	s_list
 {
