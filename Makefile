@@ -110,6 +110,7 @@ SRCS = \
 	ft_print_matrice.c \
 	ft_read_file.c \
 	ft_free_tab.c \
+	ft_get_line.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
