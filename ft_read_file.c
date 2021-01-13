@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 06:04:43 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/13 05:35:48 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 06:42:49 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ char		**ft_read_file(int fd)
 			return (NULL);
 		if (*line)
 			file = add_line(file, line, i++);
-		free(line);
 		if (!file)
 			return (NULL);
 	}

@@ -6,16 +6,16 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 10:14:07 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/13 05:56:32 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 06:40:20 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *fetch_line(char *str)
+char		*fetch_line(char *str)
 {
 	int		i;
-	char *res;
+	char	*res;
 
 	i = 0;
 	if (!str)
@@ -34,9 +34,9 @@ char *fetch_line(char *str)
 	return (res);
 }
 
-char *fetch_save(char *save)
+char		*fetch_save(char *save)
 {
-	char *res;
+	char	*res;
 	int		i;
 	int		j;
 
@@ -69,9 +69,9 @@ static void	multiple_free(char **save, char *tmp, char *buffer)
 	free(buffer);
 }
 
-int		ft_gnl(int fd, char **line)
+int			ft_gnl(int fd, char **line)
 {
-	char *buffer;
+	char		*buffer;
 	static char *save;
 	int			readvalue;
 	char		*tmp;
@@ -94,7 +94,5 @@ int		ft_gnl(int fd, char **line)
 	free(buffer);
 	*line = fetch_line(save);
 	save = fetch_save(save);
-	if (readvalue == 0)
-		return (0);
-	return (1);
+	return (readvalue != 0);
 }
