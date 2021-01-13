@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 18:58:25 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/09 02:42:09 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 01:05:35 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include "../../libft.h"
 
-# define CHARSET "cspdiuxXoO%"
+# define CHARSET "cspdiufxXoO%"
 
 typedef struct	s_flags
 {
@@ -56,6 +56,7 @@ void			print_unsigned(t_flags *flags, unsigned int nbr);
 void			print_base(t_flags *flags, int base, unsigned int nbr,
 int caps);
 void			print_percent(t_flags *flags);
+void			print_double(t_flags *flags, double nb);
 
 void			print_int(t_flags *flags, int nb);
 void			int_print_dot(t_flags *flags, int nb, char *str);

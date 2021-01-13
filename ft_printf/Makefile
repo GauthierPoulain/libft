@@ -43,6 +43,7 @@ SRCS = \
 	src/print_unisgned.c \
 	src/print_base.c \
 	src/print_percent.c \
+	src/print_double.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/11 07:27:55 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 01:20:44 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ int				ft_math_fibonacci(int index);
 int				ft_math_isprime(int nb);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-int				ft_math_power(int nb, int power);
 int				ft_popnbr(int base, int next);
 int				ft_toupper(int c);
 int				ft_gnl(int fd, char **line);
@@ -96,6 +95,7 @@ int				ft_fprintf(int fd, const char *s, ...);
 int				ft_startwith(char *str, char *start);
 int				ft_endwith(char *str, char *end);
 
+long long		ft_math_power(long long nb, long long power);
 long long		ft_math_max(long long a, long long b);
 long long		ft_math_min(long long a, long long b);
 
