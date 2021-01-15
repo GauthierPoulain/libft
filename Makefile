@@ -112,8 +112,6 @@ SRCS = \
 	ft_free_tab.c \
 	ft_get_line.c \
 	ft_atoi_len.c \
-	ft_add_line.c \
-	ft_tab_len.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"

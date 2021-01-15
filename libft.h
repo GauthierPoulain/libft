@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/15 12:41:35 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/14 02:19:23 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ char			*ft_ctos(char c);
 char			*ft_get_line(char **tab, char *start, char *end);
 
 char			**ft_read_file(int fd);
-char			**ft_add_line(char **src, char *line);
 
 int				ft_tolower(int c);
 int				ft_find_next_prime(int nb);
@@ -112,7 +111,6 @@ size_t			ft_putendl_fd(char *s, int fd);
 size_t			ft_putnbr_fd(long long n, int fd);
 size_t			ft_putstr_fd(char *s, int fd);
 size_t			ft_putstrn_fd(char *s, size_t n, int fd);
-size_t			ft_tab_len(char **tab);
 
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstnew(void *content);
