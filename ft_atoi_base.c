@@ -6,45 +6,47 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 12:25:17 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/13 10:12:46 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/16 08:35:31 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_nb(char c, char *base)
+int	base(int c, int base)
 {
-	int		i;
+	char *str = "0123456789abcdef";
+	char *str2 = "0123456789ABCDEF";
+	int  i = 0;
 
-	i = 0;
-	while (base[i] && base[i] != c)
+	while (i < base)
+	{
+		if (c == str[i] || c == str2[i])
+			return (i);
 		i++;
-	return (i);
+	}
+	return (-1);
 }
 
-int			ft_atoi_base(char *str, char *base)
+int ft_atoi_base(char *str, int str_base)
 {
-	int		s;
-	int		i;
-	int		res;
-	int		negative;
-	int		base_length;
-
-	base_length = 0;
-	while (base[base_length])
-		++base_length;
-	s = 0;
-	while (str[s] != '\0' && (str[s] == ' ' || str[s] == '\t' || str[s] == '\r'
-		|| str[s] == '\n' || str[s] == '\v' || str[s] == '\f'))
-		s++;
-	i = s - 1;
-	res = 0;
-	negative = 1;
-	while (str[++i] && (((str[i] == '-' || str[i] == '+') && i == s) ||
-		(str[i] != '-' && str[i] != '+')))
+	int nb = 0;
+	int negatif = 0;
+	int	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
 		if (str[i] == '-')
-			negative = -1;
-		else if (str[i] != '+')
-			res = (res * base_length) + (get_nb(str[i], base));
-	return (res * negative);
+			negatif = 1;
+		i++;
+	}
+	while (base(str[i], str_base) != -1)
+	{
+		nb = nb * str_base;
+		nb = nb + base(str[i], str_base);
+		i++;
+	}
+	if (negatif)
+		return (-nb);
+	return (nb);
 }

@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/14 02:19:23 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/16 08:37:05 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char			*ft_strrchr(const char *s, int c);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			**ft_split(char const *s, char c);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-char			*ft_convert_base(char *nbr, char *base_from, char *base_to);
+char			*ft_convert_base(char *nbr, int base_from, int base_to);
 char			*ft_itoa(int n);
 char			*ft_uitoa(unsigned long n);
 char			*ft_strchr(const char *s, int c);
@@ -83,7 +83,7 @@ int				ft_isdigit(int c);
 int				ft_ischarset(int c, char *charset);
 int				ft_isprint(int c);
 int				ft_atoi(const char *str);
-int				ft_atoi_base(char *str, char *base);
+int				ft_atoi_base(char *str, int str_base);
 int				ft_isspace(int c);
 int				ft_math_fibonacci(int index);
 int				ft_math_isprime(int nb);
