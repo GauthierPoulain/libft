@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/16 08:37:05 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/16 09:06:25 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,9 @@ char			*ft_itoa_base(unsigned int nbr, int base);
 char			*ft_uitoa_base(unsigned long nbr, int base);
 char			*ft_ctos(char c);
 char			*ft_get_line(char **tab, char *start, char *end);
+char			*ft_strjoinf1(char *s1, char *s2);
+char			*ft_strjoinf2(char *s1, char *s2);
+char			*ft_strjoinall(char *s1, char *s2);
 
 char			**ft_read_file(int fd);
 
