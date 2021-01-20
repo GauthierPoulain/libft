@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/20 00:21:33 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/20 13:01:42 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ int				ft_endwith(char *str, char *end);
 int				ft_atoi_len(const char *str);
 int				ft_rgbtohex(int r, int g, int b);
 int				ft_atof_len(char *str);
+int				ft_strcmp(const char *s1, const char *s2);
+int				ft_check_limits(long long value, long long min, long long max);
 
 double			ft_atof(char *str);
 

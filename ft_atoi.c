@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 09:15:37 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/20 00:08:03 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/20 13:02:14 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_atoi_calcsign(int pos, int neg)
 
 long long	ft_atoi(const char *str)
 {
-	char	*tstr;
+	char		*tstr;
 	long long	pos;
 	long long	neg;
 	long long	res;
