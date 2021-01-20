@@ -25,7 +25,7 @@ _IWHITE=\033[47m
 NAME = libft.a
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3 -g
+CFLAGS = -Wall -Wextra -Werror -fno-builtin -O3
 
 MAKE = make --no-print-directory
 
@@ -113,6 +113,7 @@ SRCS = \
 	ft_get_line.c \
 	ft_atoi_len.c \
 	ft_rgbtohex.c \
+	ft_atof.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"

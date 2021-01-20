@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/16 09:21:40 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/19 23:22:52 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,6 @@ typedef struct	s_list
 }				t_list;
 
 void			ft_bzero(void *s, size_t n);
-void			*ft_calloc(size_t count, size_t size);
-void			ft_lstadd_front(t_list **alst, t_list *new);
-void			ft_lstadd_back(t_list **alst, t_list *new);
-void			ft_lstclear(t_list **lst, void (*del)(void *));
-void			ft_lstdelone(t_list *lst, void (*del)(void *));
-void			ft_lstiter(t_list *lst, void (*f)(void *));
-void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
-void			*ft_memchr(const void *s, int c, size_t n);
-void			*ft_memcpy(void *dst, const void *src, size_t n);
-void			*ft_memmove(void *dst, const void *src, size_t len);
-void			*ft_memset(void *b, int c, size_t len);
-void			*ft_realloc(void *s, size_t size);
 void			ft_rev_tab(char *tab);
 void			ft_swap(char *a, char *b);
 void			ft_tolowercase(char *s);
@@ -47,8 +35,15 @@ void			ft_touppercase(char *s);
 void			ft_print_matrice(char **matrice);
 void			ft_free_tab(char **tab);
 
-char			*ft_strnstr(const char *haystack,
-const char *needle, size_t len);
+void			*ft_calloc(size_t count, size_t size);
+void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void			*ft_memchr(const void *s, int c, size_t n);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
+void			*ft_memmove(void *dst, const void *src, size_t len);
+void			*ft_memset(void *b, int c, size_t len);
+void			*ft_realloc(void *s, size_t size);
+
+char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char			*ft_strndup(const char *s, size_t size);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strdup(const char *s1);
@@ -76,7 +71,6 @@ int				ft_tolower(int c);
 int				ft_find_next_prime(int nb);
 int				ft_math_sqrt(int nb);
 int				ft_math_factorial(int nb);
-int				ft_lstsize(t_list *lst);
 int				ft_count(char *str, int c);
 int				ft_get_index(char *s, int c);
 int				ft_isalnum(int c);
@@ -102,6 +96,8 @@ int				ft_endwith(char *str, char *end);
 int				ft_atoi_len(const char *str);
 int				ft_rgbtohex(int r, int g, int b);
 
+double			ft_atof(char *str);
+
 long long		ft_math_power(long long nb, long long power);
 long long		ft_math_max(long long a, long long b);
 long long		ft_math_min(long long a, long long b);
@@ -116,9 +112,14 @@ size_t			ft_putnbr_fd(long long n, int fd);
 size_t			ft_putstr_fd(char *s, int fd);
 size_t			ft_putstrn_fd(char *s, size_t n, int fd);
 
+void			ft_lstadd_front(t_list **alst, t_list *new);
+void			ft_lstadd_back(t_list **alst, t_list *new);
+void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
+int				ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstnew(void *content);
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
