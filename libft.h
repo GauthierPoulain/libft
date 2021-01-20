@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/19 23:22:52 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/20 00:21:33 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_ischarset(int c, char *charset);
 int				ft_isprint(int c);
-int				ft_atoi(const char *str);
 int				ft_atoi_base(char *str, int str_base);
 int				ft_isspace(int c);
 int				ft_math_fibonacci(int index);
@@ -95,9 +94,11 @@ int				ft_startwith(char *str, char *start);
 int				ft_endwith(char *str, char *end);
 int				ft_atoi_len(const char *str);
 int				ft_rgbtohex(int r, int g, int b);
+int				ft_atof_len(char *str);
 
 double			ft_atof(char *str);
 
+long long		ft_atoi(const char *str);
 long long		ft_math_power(long long nb, long long power);
 long long		ft_math_max(long long a, long long b);
 long long		ft_math_min(long long a, long long b);
