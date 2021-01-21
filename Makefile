@@ -125,7 +125,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ building ] $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
 	@$(AR) rcs $(NAME) $(OBJS)
-	@$(MAKE) -C ./ft_printf
 	@printf "[ $(_GREEN)$(_BOLD):)$(_END) ][ done ] $(_BLUE)$(_BOLD)$(NAME)$(_END)\n"
 
 re: fclean
@@ -134,12 +133,10 @@ re: fclean
 clean:
 	@$(RM) $(OBJS)
 	@printf "[ $(_RED)$(_BOLD)--$(_END) ][ removing ] $(_BLUE)$(_BOLD)libft objs $(_END)\n"
-	@$(MAKE) clean -C ./ft_printf
 
 fclean: clean
 	@$(RM) $(NAME)
 	@printf "[ $(_RED)$(_BOLD)--$(_END) ][ removing ] $(_BLUE)$(_BOLD)$(NAME) $(_END)\n"
-	@$(MAKE) fclean -C ./ft_printf
 
 norm:
 	@norminette *.[ch]
