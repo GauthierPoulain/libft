@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/20 13:01:42 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/21 16:34:15 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 # define STDIN 0
 # define STDOUT 1
@@ -97,6 +98,8 @@ int				ft_rgbtohex(int r, int g, int b);
 int				ft_atof_len(char *str);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_check_limits(long long value, long long min, long long max);
+int				ft_rgbatohex(int r, int g, int b, double a);
+int				ft_hextodimhex(int hex, double a);
 
 double			ft_atof(char *str);
 
