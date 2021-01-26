@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/21 16:34:15 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/26 10:32:17 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 void			*ft_realloc(void *s, size_t size);
 
-char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char			*ft_strnstr(const char *haystack, const char *needle,
+size_t len);
 char			*ft_strndup(const char *s, size_t size);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strdup(const char *s1);
@@ -126,6 +127,7 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 int				ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstnew(void *content);
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+void (*del)(void *));
 
 #endif

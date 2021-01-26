@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 08:53:31 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/20 12:38:26 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/26 10:33:07 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,3 @@ int		ft_strcmp(const char *s1, const char *s2)
 	}
 	return ((unsigned char)s1 - (unsigned char)s2);
 }
-
