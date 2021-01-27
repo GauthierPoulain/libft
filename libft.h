@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/26 10:32:17 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/27 14:26:55 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ int				ft_rgbatohex(int r, int g, int b, double a);
 int				ft_hextodimhex(int hex, double a);
 
 double			ft_atof(char *str);
+double			ft_abs(double value);
+double			ft_overflow(double min, double max, double value);
 
 long long		ft_atoi(const char *str);
 long long		ft_math_power(long long nb, long long power);

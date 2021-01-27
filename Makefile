@@ -115,6 +115,8 @@ SRCS = \
 	ft_rgbtohex.c \
 	ft_atof.c \
 	ft_check_limits.c \
+	ft_abs.c \
+	ft_overflow.c \
 
 %.o: %.c $(HEADER)
 	@printf "[ $(_GREEN)$(_BOLD)>+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
