@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 14:26:39 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/27 14:26:47 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/01/28 09:25:13 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ double		ft_overflow(double min, double max, double value)
 		return (0);
 	if (value < min)
 		value += (max - min);
-	else if (value > max)
+	else if (value >= max)
 		value -= (max - min);
 	else
 		return (value);
