@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 09:20:50 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/26 10:33:37 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/01 10:44:24 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,14 @@ int			ft_hextodimhex(int hex, double a)
 	g = (hex & 0x00ff00) >> 8;
 	b = (hex & 0x0000ff);
 	return (ft_rgbatohex(r, g, b, a));
+}
+
+t_rgb		ft_hextorgb(int hex)
+{
+	t_rgb	rgb;
+
+	rgb.r = hex >> 16;
+	rgb.g = (hex & 0x00ff00) >> 8;
+	rgb.b = (hex & 0x0000ff);
+	return (rgb);
 }

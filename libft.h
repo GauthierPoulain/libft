@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/27 14:26:55 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/01 10:44:33 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,13 @@ typedef struct	s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_rgb
+{
+	int			r;
+	int			g;
+	int			b;
+}				t_rgb;
 
 void			ft_bzero(void *s, size_t n);
 void			ft_rev_tab(char *tab);
@@ -131,5 +138,7 @@ t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 void (*del)(void *));
+
+t_rgb			ft_hextorgb(int hex);
 
 #endif
