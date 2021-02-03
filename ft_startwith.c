@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 06:00:15 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/11 06:02:04 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/03 13:30:39 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 int		ft_startwith(char *str, char *start)
 {
-	size_t lenstr;
-	size_t lenstart;
+	size_t	tmp;
 
-	if (!str || !start)
-		return (0);
-	lenstr = ft_strlen(str);
-	lenstart = ft_strlen(start);
-	if (lenstart > lenstr)
-		return (0);
-	return (ft_strncmp(str, start, lenstart) == 0);
+	tmp = ft_strlen(start);
+	return (!ft_memcmp(str, start, tmp) && (!str[tmp] || ft_isspace(str[tmp])));
 }

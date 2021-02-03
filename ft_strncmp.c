@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 08:53:31 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/26 10:33:07 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/03 13:29:55 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,22 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char casts1;
-	unsigned char casts2;
-
-	while (n-- > 0)
-	{
-		casts1 = *s1++;
-		casts2 = *s2++;
-		if (casts1 != casts2)
-			return (casts1 - casts2);
-		if (!casts1)
-			return (0);
-	}
+	if (n == 0)
+		return (0);
+	do {
+		if (*s1 != *s2++)
+			return (*(const unsigned char *)s1 -
+				*(const unsigned char *)(s2 - 1));
+		if (*s1++ == 0)
+			break;
+	} while (--n != 0);
 	return (0);
 }
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned char casts1;
-	unsigned char casts2;
-
-	while (s1 && s2)
-	{
-		casts1 = *s1++;
-		casts2 = *s2++;
-		if (casts1 != casts2)
-			return (casts1 - casts2);
-		if (!casts1)
+	while (*s1 == *s2++)
+		if (*s1++ == 0)
 			return (0);
-	}
-	return ((unsigned char)s1 - (unsigned char)s2);
+	return (*(const unsigned char *)s1 - *(const unsigned char *)(s2 - 1));
 }

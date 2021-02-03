@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:05:59 by gapoulai          #+#    #+#             */
-/*   Updated: 2020/12/26 16:23:29 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/03 13:30:06 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int		i;
+	const char *str;
 
-	i = 0;
-	if (s)
-		while (s[i])
-			i++;
-	return (i);
+	str = s;
+	while (*s)
+		++s;
+	return (s - str);
 }
