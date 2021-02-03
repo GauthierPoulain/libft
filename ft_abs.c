@@ -6,13 +6,13 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:42:54 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/01/27 13:43:39 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/03 13:44:36 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 double		ft_abs(double value)
 {
-	if (value > 0)
-		return (value);
-	return (-value);
+	if (value < 0)
+		return (-value);
+	return (value);
 }
