@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 15:06:35 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/02/06 12:13:35 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/06 12:22:26 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcat(char *dest, char *src)
 {
-	char rdest;
+	char *rdest;
 
 	rdest = dest;
 	while (*dest)
