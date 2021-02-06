@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 07:40:35 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/02/03 15:07:44 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/06 12:14:14 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	size_t i;
 
 	if (s1 == s2)
-		return 0;
+		return (0);
 	i = 0;
 	while (i < n && (*(uint8_t *)s1 == *(uint8_t *)s2))
 	{
@@ -26,6 +26,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 		s2 = 1 + (uint8_t *)s2;
 	}
 	if (i == n)
-		return (0);	
+		return (0);
 	return ((*(uint8_t *)s1 - *(uint8_t *)s2));
 }
