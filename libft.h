@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:42:01 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/02/06 12:11:05 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/06 15:34:08 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct	s_rgb
 
 void			ft_bzero(void *s, size_t n);
 void			ft_rev_tab(char *tab);
-void			ft_swap(char *a, char *b);
+void			ft_swap(void *a, void *b);
 void			ft_tolowercase(char *s);
 void			ft_touppercase(char *s);
 void			ft_print_matrice(char **matrice);
