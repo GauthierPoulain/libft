@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_alloc.c                                         :+:      :+:    :+:   */
+/*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 06:41:44 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/02/08 14:33:42 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/02/08 14:12:29 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/02/08 14:13:35 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool	ft_malloc(size_t count, size_t size, void **dst)
+size_t	ft_putchar_fd(char c, int fd)
 {
-	*dst = malloc(count * size);
-	return (*dst != NULL);
+	return (write(fd, &c, 1));
 }
 
-bool	ft_calloc(size_t count, size_t size, void **dst)
+size_t	ft_putstr_fd(char *s, int fd)
 {
-	if (!ft_malloc(count, size, dst))
-		return (false);
-	ft_bzero(*dst, count * size);
-	return (true);
+	return (write(fd, s, ft_strlen(s)));
+}
+
+size_t	ft_putnbr_fd(long long n, int fd)
+{
+	return (ft_putstr_fd(ft_itoa(n), fd));
 }

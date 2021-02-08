@@ -6,7 +6,7 @@
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 06:37:55 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/02/08 13:57:28 by gapoulai         ###   ########lyon.fr   */
+/*   Updated: 2021/02/08 14:13:47 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,16 @@ double		ft_dmin(double a, double b);
 long long	ft_max(long long a, long long b);
 double		ft_dmax(double a, double b);
 long long	ft_sqrt(long long nb);
+char		*ft_get_line(char **tab, char *start, char *end);
+char		**ft_read_file(int fd);
+bool		ft_endwith(char *str, char *end);
+bool		ft_startwith(char *str, char *start);
+int			ft_rgbtohex(int r, int g, int b);
+int			ft_rgbatohex(int r, int g, int b, double a);
+int			ft_hextodimhex(int hex, double a);
+t_rgb		ft_hextorgb(int hex);
+size_t		ft_putchar_fd(char c, int fd);
+size_t		ft_putstr_fd(char *s, int fd);
+size_t		ft_putnbr_fd(long long n, int fd);
 
 #endif

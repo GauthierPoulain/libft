@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_alloc.c                                         :+:      :+:    :+:   */
+/*   ft_get_line.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gapoulai <gapoulai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 06:41:44 by gapoulai          #+#    #+#             */
-/*   Updated: 2021/02/08 14:33:42 by gapoulai         ###   ########lyon.fr   */
+/*   Created: 2021/02/08 14:07:51 by gapoulai          #+#    #+#             */
+/*   Updated: 2021/02/08 14:08:14 by gapoulai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool	ft_malloc(size_t count, size_t size, void **dst)
+char	*ft_get_line(char **tab, char *start, char *end)
 {
-	*dst = malloc(count * size);
-	return (*dst != NULL);
-}
+	int		i;
 
-bool	ft_calloc(size_t count, size_t size, void **dst)
-{
-	if (!ft_malloc(count, size, dst))
-		return (false);
-	ft_bzero(*dst, count * size);
-	return (true);
+	i = 0;
+	while (tab[i])
+	{
+		if (ft_startwith(tab[i], start) && ft_endwith(tab[i], end))
+			return (tab[i]);
+		i++;
+	}
+	return (NULL);
 }
