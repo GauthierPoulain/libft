@@ -57,6 +57,6 @@ fclean: clean
 	@printf "[ ${_PURPLE}${_BOLD}${NAME}${_END} ] > [ $(_RED)$(_BOLD)-$(_END) ][ removing ] $(_BLUE)$(_BOLD)$(NAME) $(_END)\n"
 
 norm:
-	@norminette
+	@norminettev2
 
 .PHONY: all re clean fclean norm
